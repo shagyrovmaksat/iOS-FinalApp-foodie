@@ -66,6 +66,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccountPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kBc-OL-pSm"/>
+                                    <segue destination="EKh-Vc-31X" kind="show" id="fBs-iK-Iqk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,7 +94,7 @@
         <!--Register View Controller-->
         <scene sceneID="0pQ-PV-6NY">
             <objects>
-                <viewController id="EKh-Vc-31X" customClass="RegisterViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="EKh-Vc-31X" customClass="RegisterViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGx-Il-Vzp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,17 +152,34 @@
                                 <state key="normal" title="Create an account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccount:" destination="EKh-Vc-31X" eventType="touchUpInside" id="FXs-b4-9sX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbn-td-Sua">
+                                <rect key="frame" x="57" y="818" width="300" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="I have an account. Log In">
+                                    <color key="titleColor" name="darkGreen"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToLogin:" destination="EKh-Vc-31X" eventType="touchUpInside" id="e4f-YR-nCK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yUh-Kg-iOk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GhN-6g-QOp" firstAttribute="top" secondItem="Ua8-3a-WXq" secondAttribute="bottom" constant="21" id="9Db-R8-RIq"/>
+                            <constraint firstItem="dbn-td-Sua" firstAttribute="leading" secondItem="7fp-YK-E6w" secondAttribute="leading" id="F1r-4r-hcs"/>
                             <constraint firstItem="yUh-Kg-iOk" firstAttribute="trailing" secondItem="7fp-YK-E6w" secondAttribute="trailing" constant="57" id="IQI-hN-a6Y"/>
+                            <constraint firstItem="dbn-td-Sua" firstAttribute="trailing" secondItem="7fp-YK-E6w" secondAttribute="trailing" id="LeY-l5-XBK"/>
                             <constraint firstItem="GhN-6g-QOp" firstAttribute="leading" secondItem="tXc-Ry-kYN" secondAttribute="leading" id="ODi-dp-eD4"/>
                             <constraint firstItem="GhN-6g-QOp" firstAttribute="trailing" secondItem="tXc-Ry-kYN" secondAttribute="trailing" id="QX8-dv-gx2"/>
                             <constraint firstItem="7fp-YK-E6w" firstAttribute="top" secondItem="tXc-Ry-kYN" secondAttribute="bottom" constant="95" id="RpB-tV-cDM"/>
+                            <constraint firstItem="yUh-Kg-iOk" firstAttribute="bottom" secondItem="dbn-td-Sua" secondAttribute="bottom" constant="10" id="Rs4-cC-ilR"/>
                             <constraint firstItem="tXc-Ry-kYN" firstAttribute="top" secondItem="GhN-6g-QOp" secondAttribute="bottom" constant="34" id="auD-b7-Few"/>
+                            <constraint firstItem="dbn-td-Sua" firstAttribute="top" secondItem="7fp-YK-E6w" secondAttribute="bottom" constant="49" id="hZA-BS-QmL"/>
                             <constraint firstItem="yUh-Kg-iOk" firstAttribute="bottom" secondItem="tXc-Ry-kYN" secondAttribute="bottom" constant="253" id="i4c-pa-veX"/>
                             <constraint firstItem="Ua8-3a-WXq" firstAttribute="centerX" secondItem="vGx-Il-Vzp" secondAttribute="centerX" id="jow-Sx-7Ow"/>
                             <constraint firstItem="7fp-YK-E6w" firstAttribute="leading" secondItem="yUh-Kg-iOk" secondAttribute="leading" constant="57" id="lHM-ML-vHx"/>
@@ -169,6 +187,14 @@
                             <constraint firstItem="tXc-Ry-kYN" firstAttribute="leading" secondItem="yUh-Kg-iOk" secondAttribute="leading" constant="54" id="zBz-Ht-hlZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="TFk-Ch-dOv"/>
+                    <connections>
+                        <outlet property="emailField" destination="4W0-EQ-Ud3" id="mx2-uc-ibQ"/>
+                        <outlet property="nameField" destination="4Q9-CG-r5I" id="43G-zX-aRM"/>
+                        <outlet property="passwordField" destination="NTM-bp-zs3" id="fhq-XA-9te"/>
+                        <outlet property="registrationButton" destination="7fp-YK-E6w" id="hN7-n9-Oq9"/>
+                        <outlet property="surnameField" destination="iJk-Pw-aTm" id="SgN-Xn-UgK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcB-UA-Jms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
