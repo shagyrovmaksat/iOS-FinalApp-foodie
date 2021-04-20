@@ -35,15 +35,9 @@ class RegisterViewController: UIViewController {
         let password = passwordField.text
         if email != "" && password != "" {
             Auth.auth().createUser(withEmail: email!, password: password!) { [weak self] (result, error) in
-//                print(email)
                 self?.sendMessageToEmail()
-//                print("hi2")
                 if error == nil{
-//                    print("hi1")
                     if name != "" && surname != ""{
-//                        print("hi")
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "dd.MM.yyyy"
                         let userData = [
                             "email": email!,
                             "surname": surname!,
