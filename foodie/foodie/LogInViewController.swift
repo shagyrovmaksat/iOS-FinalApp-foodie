@@ -21,6 +21,7 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.logInButton.layer.cornerRadius = 5
+        indicator.isHidden = true
         // Do any additional setup after loading the view.
     }
     
