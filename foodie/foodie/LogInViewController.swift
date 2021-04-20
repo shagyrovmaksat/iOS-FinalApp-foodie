@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    var currentUser : User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,20 +24,46 @@ class LogInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        currentUser = Auth.auth().currentUser
+        if currentUser != nil && currentUser!.isEmailVerified {
+            goToMain()
+        }
+    }
+    
     @IBAction func logInPressed(_ sender: Any) {
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        indicator.startAnimating()
+        indicator.isHidden = false
+        if email != "" && password != "" {
+            Auth.auth().signIn(withEmail: email!, password: password!) { [weak self](result, error) in
+                self?.indicator.stopAnimating()
+                self?.indicator.isHidden = true
+                if error == nil {
+                    if Auth.auth().currentUser!.isEmailVerified {
+                        self?.goToMain()
+                    } else {
+                        self?.showMessage(title: "Warning", message: "Your email is not verified")
+                    }
+                } else {
+                    self?.showMessage(title: "Error", message: "Some problem occured")
+                }
+            }
+        }
     }
     
-    @IBAction func createAccountPressed(_ sender: Any) {
+    func goToMain() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let mainPage = storyboard.instantiateViewController(identifier: "Main") as? UITabBarController {
+            present(mainPage, animated: true, completion: nil)
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showMessage(title : String, message : String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in }
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
     }
-    */
-
 }

@@ -17,10 +17,12 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var surnameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var registrationButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registrationButton.layer.cornerRadius = 5
+        indicator.isHidden = true
     }
     
 
@@ -34,7 +36,11 @@ class RegisterViewController: UIViewController {
         let email = emailField.text
         let password = passwordField.text
         if email != "" && password != "" {
+            indicator.startAnimating()
+            indicator.isHidden = false
             Auth.auth().createUser(withEmail: email!, password: password!) { [weak self] (result, error) in
+                self?.indicator.stopAnimating()
+                self?.indicator.isHidden = true
                 self?.sendMessageToEmail()
                 if error == nil{
                     if name != "" && surname != ""{
