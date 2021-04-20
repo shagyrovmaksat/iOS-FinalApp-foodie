@@ -134,7 +134,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NTM-bp-zs3">
                                         <rect key="frame" x="0.0" y="250" width="250" height="47.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fp-YK-E6w">
                                         <rect key="frame" x="0.0" y="312.5" width="250" height="47.5"/>

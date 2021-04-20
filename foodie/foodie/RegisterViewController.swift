@@ -56,7 +56,6 @@ class RegisterViewController: UIViewController {
                 else{
                     self?.showMessage(title: "Error", message: "Some problem occured")
                 }
-                
             }
         }
     }
