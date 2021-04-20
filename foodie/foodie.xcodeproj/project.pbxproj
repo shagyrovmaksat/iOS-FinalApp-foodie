@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A1A9AE0E15765BBF06EC23D /* Pods_foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59A774A72161F83D8223F15 /* Pods_foodie.framework */; };
+		633AC06B262F4250007632D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633AC06A262F4250007632D9 /* GoogleService-Info.plist */; };
 		637ED8DC262F26B80060562F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637ED8DB262F26B80060562F /* AppDelegate.swift */; };
 		637ED8DE262F26B80060562F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637ED8DD262F26B80060562F /* SceneDelegate.swift */; };
 		637ED8E3262F26B80060562F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637ED8E1262F26B80060562F /* Main.storyboard */; };
@@ -15,10 +16,10 @@
 		637ED8E8262F26B90060562F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637ED8E6262F26B90060562F /* LaunchScreen.storyboard */; };
 		637ED8F2262F270C0060562F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637ED8F1262F270C0060562F /* LogInViewController.swift */; };
 		637ED8F5262F27160060562F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637ED8F4262F27160060562F /* RegisterViewController.swift */; };
-		E584D074262F3F5200372C15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E584D073262F3F5200372C15 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		633AC06A262F4250007632D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		637ED8D8262F26B80060562F /* foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637ED8DB262F26B80060562F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		637ED8DD262F26B80060562F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		637ED8F4262F27160060562F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B679B1CFBAD07D063428B534 /* Pods-foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.release.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.release.xcconfig"; sourceTree = "<group>"; };
 		C59A774A72161F83D8223F15 /* Pods_foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E584D073262F3F5200372C15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB0CAA0CE66875721BF8C2A9 /* Pods-foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.debug.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +52,6 @@
 				FB0CAA0CE66875721BF8C2A9 /* Pods-foodie.debug.xcconfig */,
 				B679B1CFBAD07D063428B534 /* Pods-foodie.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,7 +84,7 @@
 				637ED8E9262F26B90060562F /* Info.plist */,
 				637ED8F1262F270C0060562F /* LogInViewController.swift */,
 				637ED8F4262F27160060562F /* RegisterViewController.swift */,
-				E584D073262F3F5200372C15 /* GoogleService-Info.plist */,
+				633AC06A262F4250007632D9 /* GoogleService-Info.plist */,
 			);
 			path = foodie;
 			sourceTree = "<group>";
@@ -158,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				637ED8E8262F26B90060562F /* LaunchScreen.storyboard in Resources */,
-				E584D074262F3F5200372C15 /* GoogleService-Info.plist in Resources */,
+				633AC06B262F4250007632D9 /* GoogleService-Info.plist in Resources */,
 				637ED8E5262F26B90060562F /* Assets.xcassets in Resources */,
 				637ED8E3262F26B80060562F /* Main.storyboard in Resources */,
 			);
