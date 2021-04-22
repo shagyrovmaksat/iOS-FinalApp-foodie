@@ -112,7 +112,9 @@
                         <viewLayoutGuide key="safeArea" id="8u6-Ce-xPu"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="applelogo" catalog="system" id="XQA-2U-ORd"/>
+                    <tabBarItem key="tabBarItem" title="" image="applelogo" catalog="system" id="XQA-2U-ORd">
+                        <color key="badgeColor" name="darkGreen"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWN-cc-LRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,7 +130,7 @@
                         <viewLayoutGuide key="safeArea" id="duW-xu-x6G"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="dgD-3w-ynl"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" id="dgD-3w-ynl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fd-J4-5Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +143,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P9Z-tE-WWJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="darkGreen"/>
+                        <color key="tintColor" name="lightGreen"/>
+                        <color key="selectedImageTintColor" name="darkGreen"/>
                     </tabBar>
                     <connections>
                         <segue destination="8SA-pJ-3eS" kind="relationship" relationship="viewControllers" id="ekh-eW-fnf"/>
@@ -164,6 +168,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Is8-25-FIu">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="darkGreen"/>
                                 <items>
                                     <navigationItem title="email" id="elg-2v-LWI">
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="Vm1-Dq-4zC"/>
@@ -349,7 +354,7 @@
     </scenes>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="logo" width="1024" height="1024"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="profile" width="512" height="512"/>

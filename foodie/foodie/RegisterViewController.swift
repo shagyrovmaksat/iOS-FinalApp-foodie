@@ -22,7 +22,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registrationButton.layer.cornerRadius = 5
-        indicator.isHidden = true
     }
     
 
@@ -50,6 +49,8 @@ class RegisterViewController: UIViewController {
                             "name": name!
                         ]
                         Database.database().reference().child("users").child(result!.user.uid).setValue(userData)
+                        let listOfIngredients = ["0" : " "]
+                        Database.database().reference().child("users").child(result!.user.uid).child("favoriteRecipes").setValue(listOfIngredients)
                         self?.showMessage(title: "Success", message: "Please verify your email")
                     }
                 }
