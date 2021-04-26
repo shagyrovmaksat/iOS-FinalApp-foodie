@@ -8,11 +8,14 @@
 import UIKit
 
 class RecipesViewController: UIViewController {
-
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let font = UIFont.systemFont(ofSize: 20)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "darkGreen")!], for: UIControl.State.normal)
     }
     
 
