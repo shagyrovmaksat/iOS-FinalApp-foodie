@@ -18,8 +18,10 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var profileImage: UIButton!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var addButton: UIButton!
     
-    var myRecipes: [Recipe] = [Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: [])]
+    var myRecipes: [Recipe] = [Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: []), Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: [])]
+    
     var currentUser: User?
     
     private let storage = Storage.storage().reference()
@@ -47,7 +49,8 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         
         // fix height
         myTableView.rowHeight = 350
-        
+        myTableView.separatorStyle = .none
+        addButton.layer.cornerRadius = 5
         // loading current user
         let userID = Auth.auth().currentUser?.uid
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -93,19 +96,14 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? ProfileRecipeCell
-        cell?.imageView?.image = myRecipes[indexPath.row].image
-        cell?.imageView?.layer.borderWidth = 1.0
-        cell?.imageView?.layer.masksToBounds = false
-        cell?.imageView?.layer.borderColor = UIColor.white.cgColor
-        cell?.imageView?.layer.cornerRadius = (cell?.imageView?.frame.size.width)! / 2
-        cell?.imageView?.clipsToBounds = true
+        cell?.recipeImage.image = myRecipes[indexPath.row].image
 //        print(cell?.imageView?.image?.size.height)
         cell?.recipeName.text = myRecipes[indexPath.row].name
         cell?.recipeTime.text = String(myRecipes[indexPath.row].time!)
         cell?.recipeLevel.text = myRecipes[indexPath.row].difficulty
         
-        cell?.contentView.layer.borderWidth = 1.0
-        cell?.contentView.layer.borderColor = UIColor.green.cgColor
+        cell?.contentView.layer.borderWidth = 2.0
+        cell?.contentView.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
         cell?.contentView.layer.cornerRadius = 10
         cell?.contentView.layer.shadowRadius = 10
         cell?.contentView.layer.shadowOpacity = 0.35
