@@ -41,7 +41,7 @@ class Recipe {
         //get from storage by uid
     }
     
-    init(_ author : String, _ name : String, _ time : Int, _ type : String , _ description : String, _ cookingMethod : String, _ difficulty : String, _ image : UIImage, _ listOfIngredients : [Ingredient]) {
+    init(author : String, name : String, time : Int, type : String , description : String, cookingMethod : String, difficulty : String, image : UIImage, ingredients listOfIngredients : [Ingredient]) {
         self.author = author
         self.name = name
         self.time = time
