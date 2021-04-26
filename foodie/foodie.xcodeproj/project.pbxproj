@@ -21,6 +21,8 @@
 		63FB2588262F5D2700366C9E /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB2587262F5D2700366C9E /* UserInfoViewController.swift */; };
 		63FB258B262F5D4C00366C9E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB258A262F5D4C00366C9E /* FavoritesViewController.swift */; };
 		63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB258D262F5D5A00366C9E /* RecipesViewController.swift */; };
+		E52818FD2636F5E000D935D6 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */; };
+		E5B4FB582632B554008E55A5 /* ProfileRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		63FB258D262F5D5A00366C9E /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		B679B1CFBAD07D063428B534 /* Pods-foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.release.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.release.xcconfig"; sourceTree = "<group>"; };
 		C59A774A72161F83D8223F15 /* Pods_foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRecipeCell.swift; sourceTree = "<group>"; };
 		FB0CAA0CE66875721BF8C2A9 /* Pods-foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.debug.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,8 @@
 				63FB258D262F5D5A00366C9E /* RecipesViewController.swift */,
 				63C154262631BCF900FEE90D /* Recipe.swift */,
 				63C154292631BD8B00FEE90D /* Ingredient.swift */,
+				E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */,
+				E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */,
 			);
 			path = foodie;
 			sourceTree = "<group>";
@@ -228,6 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				637ED8DC262F26B80060562F /* AppDelegate.swift in Sources */,
+				E5B4FB582632B554008E55A5 /* ProfileRecipeCell.swift in Sources */,
+				E52818FD2636F5E000D935D6 /* LaunchScreenVC.swift in Sources */,
 				63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */,
 				63C1542A2631BD8B00FEE90D /* Ingredient.swift in Sources */,
 				637ED8DE262F26B80060562F /* SceneDelegate.swift in Sources */,
