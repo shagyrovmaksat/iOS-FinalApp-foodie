@@ -11,7 +11,7 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 
-class UserInfoViewController: UIViewController {
+class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var nameSurname: UILabel!
@@ -94,6 +94,11 @@ class UserInfoViewController: UIViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? ProfileRecipeCell
         cell?.imageView?.image = myRecipes[indexPath.row].image
+        cell?.imageView?.layer.borderWidth = 1.0
+        cell?.imageView?.layer.masksToBounds = false
+        cell?.imageView?.layer.borderColor = UIColor.white.cgColor
+        cell?.imageView?.layer.cornerRadius = (cell?.imageView?.frame.size.width)! / 2
+        cell?.imageView?.clipsToBounds = true
 //        print(cell?.imageView?.image?.size.height)
         cell?.recipeName.text = myRecipes[indexPath.row].name
         cell?.recipeTime.text = String(myRecipes[indexPath.row].time!)
