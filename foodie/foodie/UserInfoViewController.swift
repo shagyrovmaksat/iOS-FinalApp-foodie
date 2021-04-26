@@ -11,9 +11,8 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 
-class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UserInfoViewController: UIViewController {
     
-
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var profileImage: UIButton!
@@ -123,7 +122,6 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     }
 }
 
-
 extension UserInfoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var img = UIImage()
@@ -161,4 +159,3 @@ extension UserInfoViewController: UIImagePickerControllerDelegate, UINavigationC
         picker.dismiss(animated: true, completion: nil)
     }
 }
-

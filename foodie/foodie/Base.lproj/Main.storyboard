@@ -102,39 +102,113 @@
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="103.79464285714285"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Recipes View Controller-->
         <scene sceneID="bn6-PW-0bi">
             <objects>
-                <viewController id="hTH-eL-lDg" customClass="FavoritesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hTH-eL-lDg" customClass="RecipesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xc6-dy-aay">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMO-TQ-yID">
+                                <rect key="frame" x="0.0" y="44" width="414" height="250"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uvv-lL-J6K">
+                                        <rect key="frame" x="8" y="202" width="398" height="41"/>
+                                        <color key="backgroundColor" name="lightGreen"/>
+                                        <segments>
+                                            <segment title="Breakfast"/>
+                                            <segment title="Lunch"/>
+                                            <segment title="Dinner"/>
+                                        </segments>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <color key="selectedSegmentTintColor" name="darkGreen"/>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Z-L5-pOL">
+                                        <rect key="frame" x="8" y="158" width="140" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="akW-9m-wJ2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" name="darkGreen"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-lf-4QL">
+                                        <rect key="frame" x="132" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="HCC-YF-mie"/>
+                                            <constraint firstAttribute="width" constant="150" id="jXZ-yJ-wb8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="36Z-L5-pOL" firstAttribute="top" secondItem="0cf-lf-4QL" secondAttribute="bottom" constant="8" symbolic="YES" id="2a2-jw-gJT"/>
+                                    <constraint firstAttribute="trailing" secondItem="uvv-lL-J6K" secondAttribute="trailing" constant="8" id="37c-ot-r6R"/>
+                                    <constraint firstAttribute="bottom" secondItem="uvv-lL-J6K" secondAttribute="bottom" constant="8" id="9r5-Vn-99b"/>
+                                    <constraint firstItem="36Z-L5-pOL" firstAttribute="leading" secondItem="LMO-TQ-yID" secondAttribute="leading" constant="8" id="J9Q-QA-wEs"/>
+                                    <constraint firstItem="0cf-lf-4QL" firstAttribute="centerX" secondItem="LMO-TQ-yID" secondAttribute="centerX" id="KRq-Yd-VnC"/>
+                                    <constraint firstItem="0cf-lf-4QL" firstAttribute="top" secondItem="LMO-TQ-yID" secondAttribute="top" id="No3-Vw-DlQ"/>
+                                    <constraint firstItem="uvv-lL-J6K" firstAttribute="leading" secondItem="LMO-TQ-yID" secondAttribute="leading" constant="8" id="Z9v-rS-vGe"/>
+                                    <constraint firstItem="uvv-lL-J6K" firstAttribute="top" secondItem="36Z-L5-pOL" secondAttribute="bottom" constant="8" symbolic="YES" id="bRC-Vc-RLf"/>
+                                    <constraint firstItem="0cf-lf-4QL" firstAttribute="centerX" secondItem="uvv-lL-J6K" secondAttribute="centerX" id="l3d-jF-ZtD"/>
+                                    <constraint firstAttribute="height" constant="250" id="ojj-7t-qdG"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="36Z-L5-pOL" secondAttribute="trailing" constant="20" symbolic="YES" id="yM9-Ah-N3K"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H49-mC-4hl">
+                                <rect key="frame" x="0.0" y="294" width="414" height="519"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="Th3-vb-IlL">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Th3-vb-IlL" id="yet-Jv-huT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8u6-Ce-xPu"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H49-mC-4hl" firstAttribute="bottom" secondItem="8u6-Ce-xPu" secondAttribute="bottom" id="0Ic-s4-EWR"/>
+                            <constraint firstItem="LMO-TQ-yID" firstAttribute="leading" secondItem="Xc6-dy-aay" secondAttribute="leading" id="1uL-BZ-e2s"/>
+                            <constraint firstItem="H49-mC-4hl" firstAttribute="trailing" secondItem="8u6-Ce-xPu" secondAttribute="trailing" id="303-oR-sP4"/>
+                            <constraint firstItem="H49-mC-4hl" firstAttribute="top" secondItem="LMO-TQ-yID" secondAttribute="bottom" id="3Yb-0G-OcD"/>
+                            <constraint firstItem="H49-mC-4hl" firstAttribute="leading" secondItem="8u6-Ce-xPu" secondAttribute="leading" id="C4u-cI-YNi"/>
+                            <constraint firstItem="LMO-TQ-yID" firstAttribute="trailing" secondItem="8u6-Ce-xPu" secondAttribute="trailing" id="ICv-Pj-8zG"/>
+                            <constraint firstItem="LMO-TQ-yID" firstAttribute="top" secondItem="8u6-Ce-xPu" secondAttribute="top" id="f8s-Lw-ZIn"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="applelogo" catalog="system" id="XQA-2U-ORd">
                         <color key="badgeColor" name="darkGreen"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="uvv-lL-J6K" id="A34-1P-x5o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWN-cc-LRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517" y="798"/>
+            <point key="canvasLocation" x="1500.0000000000002" y="821.65178571428567"/>
         </scene>
-        <!--Recipes View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="Lby-Is-3ch">
             <objects>
-                <viewController id="MxI-rC-Mp5" customClass="RecipesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MxI-rC-Mp5" customClass="FavoritesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ml-de-jg9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="duW-xu-x6G"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="lightGreen"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" id="dgD-3w-ynl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fd-J4-5Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2243" y="798"/>
+            <point key="canvasLocation" x="2149" y="798"/>
         </scene>
         <!--Launch ScreenVC-->
         <scene sceneID="MYu-qs-yHJ">
@@ -213,6 +287,7 @@
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="350" id="eBX-la-x7y" customClass="ProfileRecipeCell" customModule="foodie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="350"/>
+
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBX-la-x7y" id="p16-y1-SK9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
@@ -269,10 +344,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="8SA-pJ-3eS" id="kTK-uG-jn4"/>
-                                    <outlet property="delegate" destination="8SA-pJ-3eS" id="hI0-JN-2Qd"/>
-                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-st-Aoi">
                                 <rect key="frame" x="20" y="353" width="140" height="38"/>
@@ -301,7 +372,9 @@
                         <viewLayoutGuide key="safeArea" id="TMr-cX-8A7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" id="rq5-Bc-9Hf"/>
+                    <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" id="rq5-Bc-9Hf">
+                        <color key="badgeColor" name="darkGreen"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="myImageView" destination="9tN-Cd-zya" id="R2Z-Ua-9wF"/>
                         <outlet property="myTableView" destination="Tqk-h8-Kfm" id="tmm-yR-QDA"/>
@@ -427,6 +500,9 @@
         <image name="logo" width="1024" height="1024"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="profile" width="512" height="512"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="darkGreen">
             <color red="0.25490196078431371" green="0.42745098039215684" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -435,12 +511,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
