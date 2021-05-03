@@ -11,7 +11,7 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 
-class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable {
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var nameSurname: UILabel!
@@ -23,6 +23,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     var myRecipes: [Recipe] = [Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: []), Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: [])]
     
     var currentUser: User?
+    var nameSurnameArr: [String] = []
     
     private let storage = Storage.storage().reference()
     let ref = Database.database().reference()
@@ -53,12 +54,12 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         addButton.layer.cornerRadius = 5
         // loading current user
         let userID = Auth.auth().currentUser?.uid
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { [self] (snapshot) in
           // Get user value
             let value = snapshot.value as? NSDictionary
             let name = value?["name"] as? String ?? ""
             let surname = value?["surname"] as? String ?? ""
-            let nameSurnameArr = [name, surname]
+            nameSurnameArr = [name, surname]
             self.nameSurname.text = nameSurnameArr[0] + " " + nameSurnameArr[1]
           }) { (error) in
             print(error.localizedDescription)
@@ -122,6 +123,21 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             print("Error")
         }
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func edit(name: String, surname: String) {
+        self.ref.child("users/\(Auth.auth().currentUser!.uid)/name").setValue(name)
+        self.ref.child("users/\(Auth.auth().currentUser!.uid)/surname").setValue(surname)
+        self.nameSurname.text = name + " " + surname
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? EditProfileVC{
+            destination.delegate = self
+            nameSurnameArr = self.nameSurname.text?.components(separatedBy: " ") ?? [""]
+            destination.name = self.nameSurnameArr[0]
+            destination.surname = self.nameSurnameArr[1]
+        }
     }
 }
 
