@@ -73,6 +73,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6375E16326403CC600F7967D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E52A463E263ADC45004F0B49 /* EditProfileVC.swift */,
+				E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */,
+				63FB2587262F5D2700366C9E /* UserInfoViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		6375E16426403CE400F7967D /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				63FB258D262F5D5A00366C9E /* RecipesViewController.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		6375E16526403CE900F7967D /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				63FB258A262F5D4C00366C9E /* FavoritesViewController.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		6375E16626403D2A00F7967D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63C154262631BCF900FEE90D /* Recipe.swift */,
+				63C154292631BD8B00FEE90D /* Ingredient.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6375E16726403D3700F7967D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E52A463B263ADBF5004F0B49 /* Editable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		637ED8CF262F26B80060562F = {
 			isa = PBXGroup;
 			children = (
@@ -100,18 +143,15 @@
 				637ED8E4262F26B90060562F /* Assets.xcassets */,
 				637ED8E6262F26B90060562F /* LaunchScreen.storyboard */,
 				637ED8E9262F26B90060562F /* Info.plist */,
+				E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */,
 				637ED8F1262F270C0060562F /* LogInViewController.swift */,
 				637ED8F4262F27160060562F /* RegisterViewController.swift */,
 				633AC06A262F4250007632D9 /* GoogleService-Info.plist */,
-				63FB2587262F5D2700366C9E /* UserInfoViewController.swift */,
-				63FB258A262F5D4C00366C9E /* FavoritesViewController.swift */,
-				63FB258D262F5D5A00366C9E /* RecipesViewController.swift */,
-				63C154262631BCF900FEE90D /* Recipe.swift */,
-				63C154292631BD8B00FEE90D /* Ingredient.swift */,
-				E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */,
-				E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */,
-				E52A463B263ADBF5004F0B49 /* Editable.swift */,
-				E52A463E263ADC45004F0B49 /* EditProfileVC.swift */,
+				6375E16326403CC600F7967D /* User */,
+				6375E16426403CE400F7967D /* Recipes */,
+				6375E16526403CE900F7967D /* Favourites */,
+				6375E16726403D3700F7967D /* Protocols */,
+				6375E16626403D2A00F7967D /* Models */,
 			);
 			path = foodie;
 			sourceTree = "<group>";
