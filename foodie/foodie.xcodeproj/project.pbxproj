@@ -23,6 +23,7 @@
 		63FB2588262F5D2700366C9E /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB2587262F5D2700366C9E /* UserInfoViewController.swift */; };
 		63FB258B262F5D4C00366C9E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB258A262F5D4C00366C9E /* FavoritesViewController.swift */; };
 		63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB258D262F5D5A00366C9E /* RecipesViewController.swift */; };
+		E5217D712641175A006E32DA /* AddRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5217D702641175A006E32DA /* AddRecipeVC.swift */; };
 		E52818FD2636F5E000D935D6 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */; };
 		E52A463C263ADBF5004F0B49 /* Editable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A463B263ADBF5004F0B49 /* Editable.swift */; };
 		E52A463F263ADC45004F0B49 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A463E263ADC45004F0B49 /* EditProfileVC.swift */; };
@@ -49,6 +50,7 @@
 		63FB258D262F5D5A00366C9E /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		B679B1CFBAD07D063428B534 /* Pods-foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.release.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.release.xcconfig"; sourceTree = "<group>"; };
 		C59A774A72161F83D8223F15 /* Pods_foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5217D702641175A006E32DA /* AddRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeVC.swift; sourceTree = "<group>"; };
 		E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		E52A463B263ADBF5004F0B49 /* Editable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
 		E52A463E263ADC45004F0B49 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				63FB258D262F5D5A00366C9E /* RecipesViewController.swift */,
+				E5217D702641175A006E32DA /* AddRecipeVC.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */,
 				6375E171264048C500F7967D /* DetailRecipeViewController.swift in Sources */,
 				63C1542A2631BD8B00FEE90D /* Ingredient.swift in Sources */,
+				E5217D712641175A006E32DA /* AddRecipeVC.swift in Sources */,
 				637ED8DE262F26B80060562F /* SceneDelegate.swift in Sources */,
 				63FB2588262F5D2700366C9E /* UserInfoViewController.swift in Sources */,
 				E52A463C263ADBF5004F0B49 /* Editable.swift in Sources */,
