@@ -12,8 +12,7 @@ import FirebaseStorage
 import FirebaseDatabase
 import CoreData
 
-class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable {
-    
+class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable, Addable {
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var profileImage: UIButton!
@@ -22,8 +21,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var addButton: UIButton!
 
     var myRecipes: [NSManagedObject] = []
-        //[Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: []), Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: [])]
-    
+
     var currentUser: User?
     var nameSurnameArr: [String] = []
     
@@ -118,6 +116,32 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         myTableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { [self] (contextualAction, view, boolValue) in
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+            
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            managedContext.delete(myRecipes[indexPath.row])
+            
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error). \(error.userInfo)")
+            }
+        
+            myRecipes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            myTableView.reloadData()
+        })
+        deleteAction.backgroundColor = UIColor(named: "darkGreen")
+            
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeActions
+    }
+    
     @IBAction func logOutPressed(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -131,6 +155,11 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         self.ref.child("users/\(Auth.auth().currentUser!.uid)/name").setValue(name)
         self.ref.child("users/\(Auth.auth().currentUser!.uid)/surname").setValue(surname)
         self.nameSurname.text = name + " " + surname
+    }
+    
+    func add(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+        save(name, time, difficulty, ingredients, methods)
+        myTableView.reloadData()
     }
     
     func save(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
@@ -155,9 +184,9 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
-    func editRecipe(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+    func editRecipe(_ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
         
-        let indexInMyRecipes = myRecipes.firstIndex(where: { ($0.value(forKey: "name") as! String) == name})!
+        let indexInMyRecipes = myRecipes.firstIndex(where: { ($0.value(forKey: "name") as! String) == oldName})!
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -180,6 +209,10 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             nameSurnameArr = self.nameSurname.text?.components(separatedBy: " ") ?? [""]
             destination.name = self.nameSurnameArr[0]
             destination.surname = self.nameSurnameArr[1]
+        }
+        
+        if let destination = segue.destination as? AddRecipeVC{
+            destination.delegate = self
         }
         
         if let index = myTableView.indexPathForSelectedRow?.row {

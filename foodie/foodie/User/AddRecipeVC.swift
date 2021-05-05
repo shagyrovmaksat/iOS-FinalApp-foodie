@@ -8,17 +8,23 @@
 import UIKit
 
 class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
-    
+    var delegate: Addable?
 
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var levelPicker: UIPickerView!
-    var pickerData: [String] = [String]()
+    
+    @IBOutlet weak var nameTextInput: UITextField!
+    @IBOutlet weak var timeTextInput: UITextField!
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    @IBOutlet weak var methodsTextView: UITextView!
+    
+    var difficulty = "easy"
+    var pickerData = ["easy", "medium", "hard"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Connect data:
         self.levelPicker.delegate = self
         self.levelPicker.dataSource = self
-        pickerData = ["easy", "medium", "hard"]
     }
     override func didReceiveMemoryWarning() {
        super.didReceiveMemoryWarning()
@@ -37,6 +43,10 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         return pickerData[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        difficulty = pickerData[row]
+    }
+    
     @IBAction func chooseImage(_ sender: UIButton) {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -45,9 +55,18 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         present(vc, animated: true)
     }
     
+    @IBAction func backPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func savePressed(_ sender: Any) {
+        delegate?.add(nameTextInput.text!, timeTextInput.text!, difficulty, ingredientsTextView.text!, methodsTextView.text!)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension AddRecipeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var img = UIImage()
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage{
@@ -60,6 +79,7 @@ extension AddRecipeVC: UIImagePickerControllerDelegate, UINavigationControllerDe
             return
         }
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }

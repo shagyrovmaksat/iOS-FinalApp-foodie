@@ -23,6 +23,7 @@ class DetailRecipeViewController: UIViewController, Editable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.topItem?.title = name
         timeLabel.text = "Time it takes: " + time!
         difficultyLabel.text = "Level of difficulty: " + difficulty!
         ingredientsTextView.text = ingredients
@@ -30,11 +31,11 @@ class DetailRecipeViewController: UIViewController, Editable {
         ingredientsTextView.isEditable = false
         methodsTextView.isEditable = false
         
-        let attrs = [
-            NSAttributedString.Key.foregroundColor: UIColor(named: "darkGreen"),
-            NSAttributedString.Key.font: UIFont(name: name!, size: 20)!
-        ]
-        self.navigationBar.titleTextAttributes = attrs as [NSAttributedString.Key : Any]
+//        let attrs = [
+//            NSAttributedString.Key.foregroundColor: UIColor(named: "darkGreen"),
+//            NSAttributedString.Key.font: UIFont(name: name!, size: 20)
+//        ]
+//        self.navigationBar.titleTextAttributes = attrs as [NSAttributedString.Key : Any]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,23 +49,21 @@ class DetailRecipeViewController: UIViewController, Editable {
             destination.delegate = self
         }
     }
-    
-    func edit(name: String, surname: String) {
-        <#code#>
+    @IBAction func backPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func editRecipe(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+    func edit(name: String, surname: String) {
+        return
+    }
+    
+    func editRecipe(_ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+        self.name = oldName
+        navigationBar.topItem?.title = name
         timeLabel.text = "Time it takes: " + time
         difficultyLabel.text = "Level of difficulty: " + difficulty
         ingredientsTextView.text = ingredients
         methodsTextView.text = methods
-        
-        let attrs = [
-            NSAttributedString.Key.foregroundColor: UIColor(named: "darkGreen"),
-            NSAttributedString.Key.font: UIFont(name: name, size: 20)!
-        ]
-        self.navigationBar.titleTextAttributes = attrs as [NSAttributedString.Key : Any]
-        
-        delegate?.editRecipe(name, time, difficulty, ingredients, methods)
+        delegate?.editRecipe(oldName, name, time, difficulty, ingredients, methods)
     }
 }
