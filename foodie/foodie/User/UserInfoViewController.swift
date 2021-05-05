@@ -10,6 +10,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import CoreData
 
 class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable {
     
@@ -19,8 +20,9 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var addButton: UIButton!
-    
-    var myRecipes: [Recipe] = [Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: []), Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: [])]
+
+    var myRecipes: [NSManagedObject] = []
+        //[Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: []), Recipe(author: "Elvina", name: "Baked vegetables", time: 15, type: "Lunch", description: "tasty easy hehe", cookingMethod: "you need to cook it idk how", difficulty: "Easy", image: UIImage.init(named: "logo")!, ingredients: [])]
     
     var currentUser: User?
     var nameSurnameArr: [String] = []
@@ -30,23 +32,23 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MyRecipe")
+        
+        do {
+            myRecipes = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error). \(error.userInfo)")
+        }
 
         currentUser = Auth.auth().currentUser
-        // loading user's recipes
-//        let parent = Database.database().reference().child("recipes")
-//        parent.observe(.value) { [weak self] (snapshot) in
-//            self?.myRecipes.removeAll()
-//            for child in snapshot.children{
-//                if let snap = child as? DataSnapshot{
-//                    let recipe = Recipe(snapshot: snap)
-//                    if recipe.author == self?.currentUser?.email{
-//                        self?.myRecipes.append(recipe)
-//                    }
-//                }
-//            }
-//            self?.myRecipes.reverse()
-//            self?.myTableView.reloadData()
-//        }
+        
         
         // fix height
         myTableView.rowHeight = 350
@@ -97,11 +99,11 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? ProfileRecipeCell
-        cell?.recipeImage.image = myRecipes[indexPath.row].image
-//        print(cell?.imageView?.image?.size.height)
-        cell?.recipeName.text = myRecipes[indexPath.row].name
-        cell?.recipeTime.text = String(myRecipes[indexPath.row].time!)
-        cell?.recipeLevel.text = myRecipes[indexPath.row].difficulty
+//        cell?.recipeImage.image = myRecipes[indexPath.row].image
+// //        print(cell?.imageView?.image?.size.height)
+        cell?.recipeName.text = myRecipes[indexPath.row].value(forKey: "name") as? String
+        cell?.recipeTime.text = myRecipes[indexPath.row].value(forKey: "time") as? String
+        cell?.recipeLevel.text = myRecipes[indexPath.row].value(forKey: "difficulty") as? String
         
         cell?.contentView.layer.borderWidth = 2.0
         cell?.contentView.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
@@ -131,12 +133,63 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         self.nameSurname.text = name + " " + surname
     }
     
+    func save(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "MyRecipe", in: managedContext)!
+        let recipe = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        recipe.setValue(name, forKey: "name")
+        recipe.setValue(time, forKey: "time")
+        recipe.setValue(difficulty, forKey: "difficulty")
+        recipe.setValue(ingredients, forKey: "ingredients")
+        recipe.setValue(methods, forKey: "methods")
+        do {
+            try managedContext.save()
+            myRecipes.append(recipe)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+
+    func editRecipe(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+        
+        let indexInMyRecipes = myRecipes.firstIndex(where: { ($0.value(forKey: "name") as! String) == name})!
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        managedContext.delete(myRecipes[indexInMyRecipes])
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error). \(error.userInfo)")
+        }
+        myRecipes.remove(at: indexInMyRecipes)
+        save(name, time, difficulty, ingredients, methods)
+        myTableView.reloadData()
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EditProfileVC{
             destination.delegate = self
             nameSurnameArr = self.nameSurname.text?.components(separatedBy: " ") ?? [""]
             destination.name = self.nameSurnameArr[0]
             destination.surname = self.nameSurnameArr[1]
+        }
+        
+        if let index = myTableView.indexPathForSelectedRow?.row {
+            let destination = segue.destination as! DetailRecipeViewController
+            destination.name = myRecipes[index].value(forKey: "name") as? String
+            destination.time = myRecipes[index].value(forKey: "time") as? String
+            destination.difficulty = myRecipes[index].value(forKey: "difficulty") as? String
+            destination.ingredients = myRecipes[index].value(forKey: "ingredients") as? String
+            destination.methods = myRecipes[index].value(forKey: "methods") as? String
+            destination.delegate = self
         }
     }
 }
