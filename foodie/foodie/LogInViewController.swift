@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import RAMAnimatedTabBarController
 
 class LogInViewController: UIViewController {
 
@@ -55,10 +56,12 @@ class LogInViewController: UIViewController {
     }
     
     func goToMain() {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let mainPage = storyboard.instantiateViewController(identifier: "Main") as? UITabBarController {
-            present(mainPage, animated: true, completion: nil)
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        if let mainPage = storyboard.instantiateViewController(identifier: "Main") as? RAMAnimatedTabBarController {
+        let mainPage = TabbarVC()
+        mainPage.modalPresentationStyle = .fullScreen
+        present(mainPage, animated: true)
+//        }
     }
     
     func showMessage(title : String, message : String) {

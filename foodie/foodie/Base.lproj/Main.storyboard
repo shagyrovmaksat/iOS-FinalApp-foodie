@@ -105,7 +105,7 @@
         <!--Recipes View Controller-->
         <scene sceneID="bn6-PW-0bi">
             <objects>
-                <viewController id="hTH-eL-lDg" customClass="RecipesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipesViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hTH-eL-lDg" customClass="RecipesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xc6-dy-aay">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +157,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H49-mC-4hl">
-                                <rect key="frame" x="0.0" y="294" width="414" height="519"/>
+                                <rect key="frame" x="0.0" y="294" width="414" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="Th3-vb-IlL">
@@ -197,7 +197,7 @@
         <!--Favorites View Controller-->
         <scene sceneID="Lby-Is-3ch">
             <objects>
-                <viewController id="MxI-rC-Mp5" customClass="FavoritesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoritesViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MxI-rC-Mp5" customClass="FavoritesViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ml-de-jg9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,31 +225,10 @@
             </objects>
             <point key="canvasLocation" x="-519" y="69"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="d4Y-5j-OBC">
-            <objects>
-                <tabBarController storyboardIdentifier="Main" modalPresentationStyle="fullScreen" id="fkH-mC-UK1" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P9Z-tE-WWJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="darkGreen"/>
-                        <color key="tintColor" name="lightGreen"/>
-                        <color key="selectedImageTintColor" name="darkGreen"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="8SA-pJ-3eS" kind="relationship" relationship="viewControllers" id="ekh-eW-fnf"/>
-                        <segue destination="hTH-eL-lDg" kind="relationship" relationship="viewControllers" id="jhu-qp-ASo"/>
-                        <segue destination="MxI-rC-Mp5" kind="relationship" relationship="viewControllers" id="yw8-oA-l6u"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pnK-0P-TCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1500" y="69"/>
-        </scene>
         <!--User Info View Controller-->
         <scene sceneID="xjF-zu-mC6">
             <objects>
-                <viewController id="8SA-pJ-3eS" customClass="UserInfoViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserInfoViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8SA-pJ-3eS" customClass="UserInfoViewController" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vTW-LD-5Hp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,7 +394,7 @@
             <objects>
                 <viewController id="LFa-fH-cHu" customClass="EditProfileVC" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdR-AH-Pzj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! Here you can edit your profile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNR-Wr-ejk">
@@ -652,7 +631,7 @@
             <objects>
                 <viewController id="Yqc-35-ZRV" customClass="EditRecipeVC" customModule="foodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lyN-wL-70o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! Here you can edit your recipe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFP-kI-CTy">
