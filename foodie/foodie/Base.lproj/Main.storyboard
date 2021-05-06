@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="icr-BT-H3W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="icr-BT-H3W">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -161,7 +161,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="Th3-vb-IlL">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Th3-vb-IlL" id="yet-Jv-huT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -183,7 +183,7 @@
                             <constraint firstItem="LMO-TQ-yID" firstAttribute="top" secondItem="8u6-Ce-xPu" secondAttribute="top" id="f8s-Lw-ZIn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="applelogo" catalog="system" id="XQA-2U-ORd">
+                    <tabBarItem key="tabBarItem" title="" image="tabbar1" id="XQA-2U-ORd">
                         <color key="badgeColor" name="darkGreen"/>
                     </tabBarItem>
                     <connections>
@@ -204,7 +204,7 @@
                         <viewLayoutGuide key="safeArea" id="duW-xu-x6G"/>
                         <color key="backgroundColor" name="lightGreen"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" id="dgD-3w-ynl"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabbar3" id="dgD-3w-ynl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fd-J4-5Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -288,7 +288,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="350" id="eBX-la-x7y" customClass="ProfileRecipeCell" customModule="foodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="350"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBX-la-x7y" id="p16-y1-SK9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
@@ -394,7 +394,7 @@
                         <viewLayoutGuide key="safeArea" id="TMr-cX-8A7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" id="rq5-Bc-9Hf">
+                    <tabBarItem key="tabBarItem" title="" image="tabbar2" id="rq5-Bc-9Hf">
                         <color key="badgeColor" name="darkGreen"/>
                     </tabBarItem>
                     <connections>
@@ -1123,11 +1123,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="applelogo" catalog="system" width="103" height="128"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="logo" width="1024" height="1024"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="profile" width="512" height="512"/>
+        <image name="tabbar1" width="30" height="30"/>
+        <image name="tabbar2" width="30" height="30"/>
+        <image name="tabbar3" width="30" height="30"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
