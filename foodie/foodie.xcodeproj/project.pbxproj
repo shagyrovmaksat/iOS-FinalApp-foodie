@@ -31,6 +31,7 @@
 		E52818FD2636F5E000D935D6 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */; };
 		E52A463C263ADBF5004F0B49 /* Editable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A463B263ADBF5004F0B49 /* Editable.swift */; };
 		E52A463F263ADC45004F0B49 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A463E263ADC45004F0B49 /* EditProfileVC.swift */; };
+		E549139926442E360071D2D8 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E549139826442E360071D2D8 /* TabbarVC.swift */; };
 		E5B4FB582632B554008E55A5 /* ProfileRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		E52A463B263ADBF5004F0B49 /* Editable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
 		E52A463E263ADC45004F0B49 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		E549139826442E360071D2D8 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRecipeCell.swift; sourceTree = "<group>"; };
 		FB0CAA0CE66875721BF8C2A9 /* Pods-foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.debug.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 				6375E16526403CE900F7967D /* Favourites */,
 				6375E16726403D3700F7967D /* Protocols */,
 				6375E16626403D2A00F7967D /* Models */,
+				E549139826442E360071D2D8 /* TabbarVC.swift */,
 			);
 			path = foodie;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				63FB258B262F5D4C00366C9E /* FavoritesViewController.swift in Sources */,
 				6317C05A2641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld in Sources */,
 				6375E17426404E6400F7967D /* EditRecipeVC.swift in Sources */,
+				E549139926442E360071D2D8 /* TabbarVC.swift in Sources */,
 				6317C05D2641763A00DA0A9F /* LocalRecipe.swift in Sources */,
 				637ED8F5262F27160060562F /* RegisterViewController.swift in Sources */,
 				63901C7D26429241004C415C /* Addable.swift in Sources */,
