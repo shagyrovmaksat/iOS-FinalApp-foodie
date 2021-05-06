@@ -13,16 +13,21 @@ class DetailRecipeViewController: UIViewController, Editable {
     var difficulty: String?
     var ingredients: String?
     var methods: String?
+    var image: UIImage?
+    var ind: Int?
     var delegate: Editable?
+    var delegateForChange: Changeable?
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var methodsTextView: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = image
         navigationBar.topItem?.title = name
         timeLabel.text = "Time it takes: " + time!
         difficultyLabel.text = "Level of difficulty: " + difficulty!
@@ -57,13 +62,36 @@ class DetailRecipeViewController: UIViewController, Editable {
         return
     }
     
-    func editRecipe(_ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+    func editRecipe(_ image: UIImage, _ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
         self.name = oldName
         navigationBar.topItem?.title = name
         timeLabel.text = "Time it takes: " + time
         difficultyLabel.text = "Level of difficulty: " + difficulty
         ingredientsTextView.text = ingredients
         methodsTextView.text = methods
-        delegate?.editRecipe(oldName, name, time, difficulty, ingredients, methods)
+        delegate?.editRecipe(imageView.image!, oldName, name, time, difficulty, ingredients, methods)
+    }
+    
+    @IBAction func changeImage(_ sender: Any) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+}
+
+extension DetailRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            imageView.image = image
+            delegateForChange?.change(ind!, image)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }

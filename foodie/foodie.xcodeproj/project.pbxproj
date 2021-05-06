@@ -11,6 +11,7 @@
 		6317C05A2641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6317C0582641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld */; };
 		6317C05D2641763A00DA0A9F /* LocalRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317C05C2641763A00DA0A9F /* LocalRecipe.swift */; };
 		633AC06B262F4250007632D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633AC06A262F4250007632D9 /* GoogleService-Info.plist */; };
+		635A377426442A01009F0A3E /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A377326442A01009F0A3E /* Changeable.swift */; };
 		6375E171264048C500F7967D /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375E170264048C500F7967D /* DetailRecipeViewController.swift */; };
 		6375E17426404E6400F7967D /* EditRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375E17326404E6400F7967D /* EditRecipeVC.swift */; };
 		637ED8DC262F26B80060562F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637ED8DB262F26B80060562F /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		6317C0592641757300DA0A9F /* ModelForMyRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelForMyRecipe.xcdatamodel; sourceTree = "<group>"; };
 		6317C05C2641763A00DA0A9F /* LocalRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipe.swift; sourceTree = "<group>"; };
 		633AC06A262F4250007632D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		635A377326442A01009F0A3E /* Changeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changeable.swift; sourceTree = "<group>"; };
 		6375E170264048C500F7967D /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		6375E17326404E6400F7967D /* EditRecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeVC.swift; sourceTree = "<group>"; };
 		637ED8D8262F26B80060562F /* foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 			children = (
 				E52A463B263ADBF5004F0B49 /* Editable.swift */,
 				63901C7C26429241004C415C /* Addable.swift */,
+				635A377326442A01009F0A3E /* Changeable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				E5217D712641175A006E32DA /* AddRecipeVC.swift in Sources */,
 				637ED8DE262F26B80060562F /* SceneDelegate.swift in Sources */,
 				63FB2588262F5D2700366C9E /* UserInfoViewController.swift in Sources */,
+				635A377426442A01009F0A3E /* Changeable.swift in Sources */,
 				E52A463C263ADBF5004F0B49 /* Editable.swift in Sources */,
 				637ED8F2262F270C0060562F /* LogInViewController.swift in Sources */,
 				63FB258B262F5D4C00366C9E /* FavoritesViewController.swift in Sources */,
