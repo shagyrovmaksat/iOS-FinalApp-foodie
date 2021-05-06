@@ -60,7 +60,7 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     @IBAction func savePressed(_ sender: Any) {
-        delegate?.add(nameTextInput.text!, timeTextInput.text!, difficulty, ingredientsTextView.text!, methodsTextView.text!)
+        delegate?.add(recipeImageView.image!, nameTextInput.text!, timeTextInput.text!, difficulty, ingredientsTextView.text!, methodsTextView.text!)
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -68,16 +68,10 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
 extension AddRecipeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var img = UIImage()
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage{
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             recipeImageView.image = image
-                    img = image
-                }
-        picker.dismiss(animated: true, completion: nil)
-        
-        guard let imageData = recipeImageView.image?.pngData() else{
-            return
         }
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

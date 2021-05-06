@@ -49,7 +49,7 @@ class EditRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
 
     @IBAction func savePressed(_ sender: Any) {
-        delegate?.editRecipe(name!, nameTextInput.text!, timeTextInput.text!, difficulty!, ingredientsTextView.text!, methodsTextView.text!)
+        delegate?.editRecipe(UIImage(), name!, nameTextInput.text!, timeTextInput.text!, difficulty!, ingredientsTextView.text!, methodsTextView.text!)
         self.dismiss(animated: true, completion: nil)
     }
     

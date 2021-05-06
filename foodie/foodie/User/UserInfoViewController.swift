@@ -12,7 +12,8 @@ import FirebaseStorage
 import FirebaseDatabase
 import CoreData
 
-class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable, Addable {
+class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable, Addable, Changeable {
+
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var profileImage: UIButton!
@@ -102,6 +103,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         cell?.recipeName.text = myRecipes[indexPath.row].value(forKey: "name") as? String
         cell?.recipeTime.text = myRecipes[indexPath.row].value(forKey: "time") as? String
         cell?.recipeLevel.text = myRecipes[indexPath.row].value(forKey: "difficulty") as? String
+        cell?.recipeImage.image = UIImage(data: (myRecipes[indexPath.row].value(forKey: "image") as? Data)!)
         
         cell?.contentView.layer.borderWidth = 2.0
         cell?.contentView.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
@@ -157,35 +159,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         self.nameSurname.text = name + " " + surname
     }
     
-    func add(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
-        save(name, time, difficulty, ingredients, methods)
-        myTableView.reloadData()
-    }
-    
-    func save(_ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "MyRecipe", in: managedContext)!
-        let recipe = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        recipe.setValue(name, forKey: "name")
-        recipe.setValue(time, forKey: "time")
-        recipe.setValue(difficulty, forKey: "difficulty")
-        recipe.setValue(ingredients, forKey: "ingredients")
-        recipe.setValue(methods, forKey: "methods")
-        do {
-            try managedContext.save()
-            myRecipes.append(recipe)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
-
-    func editRecipe(_ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
-        
+    func editRecipe(_ image: UIImage, _ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
         let indexInMyRecipes = myRecipes.firstIndex(where: { ($0.value(forKey: "name") as! String) == oldName})!
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -199,8 +173,53 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             print("Could not save. \(error). \(error.userInfo)")
         }
         myRecipes.remove(at: indexInMyRecipes)
-        save(name, time, difficulty, ingredients, methods)
+        save(image, name, time, difficulty, ingredients, methods)
         myTableView.reloadData()
+    }
+    
+    func change(_ ind: Int, _ newImage: UIImage) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        myRecipes[ind].setValue(newImage.pngData(), forKey: "image")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        myTableView.reloadData()
+    }
+    
+    func add(_ image: UIImage, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+        save(image, name, time, difficulty, ingredients, methods)
+        myTableView.reloadData()
+    }
+    
+    func save(_ image: UIImage, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "MyRecipe", in: managedContext)!
+        let recipe = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        recipe.setValue(name, forKey: "name")
+        recipe.setValue(time, forKey: "time")
+        recipe.setValue(difficulty, forKey: "difficulty")
+        recipe.setValue(ingredients, forKey: "ingredients")
+        recipe.setValue(methods, forKey: "methods")
+        recipe.setValue(image.pngData(), forKey: "image")
+        do {
+            try managedContext.save()
+            myRecipes.append(recipe)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -221,8 +240,11 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             destination.time = myRecipes[index].value(forKey: "time") as? String
             destination.difficulty = myRecipes[index].value(forKey: "difficulty") as? String
             destination.ingredients = myRecipes[index].value(forKey: "ingredients") as? String
+            destination.image = UIImage(data: (myRecipes[index].value(forKey: "image") as? Data)!)
+            destination.ind = index
             destination.methods = myRecipes[index].value(forKey: "methods") as? String
             destination.delegate = self
+            destination.delegateForChange = self
         }
     }
 }
