@@ -60,8 +60,19 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     @IBAction func savePressed(_ sender: Any) {
-        delegate?.add(recipeImageView.image!, nameTextInput.text!, timeTextInput.text!, difficulty, ingredientsTextView.text!, methodsTextView.text!)
-        self.dismiss(animated: true, completion: nil)
+        if nameTextInput.text!.removeWhitespace() == "" || timeTextInput.text!.removeWhitespace() == "" || ingredientsTextView.text!.removeWhitespace() == "" || methodsTextView.text!.removeWhitespace() == "" {
+            showMessage(title: "Warning", message: "Please fill in all the fields")
+        } else {
+            delegate?.add(recipeImageView.image!, nameTextInput.text!, timeTextInput.text!, difficulty, ingredientsTextView.text!, methodsTextView.text!)
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func showMessage(title : String, message : String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in }
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -79,3 +90,12 @@ extension AddRecipeVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     }
 }
 
+extension String {
+    func replace(string:String, replacement:String) -> String {
+        return self.replacingOccurrences(of: string, with: replacement, options: NSString.CompareOptions.literal, range: nil)
+    }
+
+    func removeWhitespace() -> String {
+        return self.replace(string: " ", replacement: "")
+    }
+}

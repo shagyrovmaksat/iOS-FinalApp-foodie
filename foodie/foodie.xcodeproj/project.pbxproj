@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A1A9AE0E15765BBF06EC23D /* Pods_foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59A774A72161F83D8223F15 /* Pods_foodie.framework */; };
 		6317C05A2641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6317C0582641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld */; };
-		6317C05D2641763A00DA0A9F /* LocalRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317C05C2641763A00DA0A9F /* LocalRecipe.swift */; };
 		633AC06B262F4250007632D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633AC06A262F4250007632D9 /* GoogleService-Info.plist */; };
 		635A377426442A01009F0A3E /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A377326442A01009F0A3E /* Changeable.swift */; };
 		6375E171264048C500F7967D /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375E170264048C500F7967D /* DetailRecipeViewController.swift */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		6317C0592641757300DA0A9F /* ModelForMyRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelForMyRecipe.xcdatamodel; sourceTree = "<group>"; };
-		6317C05C2641763A00DA0A9F /* LocalRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipe.swift; sourceTree = "<group>"; };
 		633AC06A262F4250007632D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		635A377326442A01009F0A3E /* Changeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changeable.swift; sourceTree = "<group>"; };
 		6375E170264048C500F7967D /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			children = (
 				63C154262631BCF900FEE90D /* Recipe.swift */,
 				63C154292631BD8B00FEE90D /* Ingredient.swift */,
-				6317C05C2641763A00DA0A9F /* LocalRecipe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,21 +158,21 @@
 			children = (
 				637ED8DB262F26B80060562F /* AppDelegate.swift */,
 				637ED8DD262F26B80060562F /* SceneDelegate.swift */,
-				637ED8E1262F26B80060562F /* Main.storyboard */,
-				637ED8E4262F26B90060562F /* Assets.xcassets */,
 				637ED8E6262F26B90060562F /* LaunchScreen.storyboard */,
 				637ED8E9262F26B90060562F /* Info.plist */,
 				E52818FC2636F5E000D935D6 /* LaunchScreenVC.swift */,
+				637ED8E4262F26B90060562F /* Assets.xcassets */,
+				637ED8E1262F26B80060562F /* Main.storyboard */,
 				637ED8F1262F270C0060562F /* LogInViewController.swift */,
 				637ED8F4262F27160060562F /* RegisterViewController.swift */,
-				633AC06A262F4250007632D9 /* GoogleService-Info.plist */,
-				6317C0582641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld */,
+				E549139826442E360071D2D8 /* TabbarVC.swift */,
 				6375E16326403CC600F7967D /* User */,
 				6375E16426403CE400F7967D /* Recipes */,
 				6375E16526403CE900F7967D /* Favourites */,
-				6375E16726403D3700F7967D /* Protocols */,
 				6375E16626403D2A00F7967D /* Models */,
-				E549139826442E360071D2D8 /* TabbarVC.swift */,
+				6375E16726403D3700F7967D /* Protocols */,
+				633AC06A262F4250007632D9 /* GoogleService-Info.plist */,
+				6317C0582641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld */,
 			);
 			path = foodie;
 			sourceTree = "<group>";
@@ -319,7 +316,6 @@
 				6317C05A2641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld in Sources */,
 				6375E17426404E6400F7967D /* EditRecipeVC.swift in Sources */,
 				E549139926442E360071D2D8 /* TabbarVC.swift in Sources */,
-				6317C05D2641763A00DA0A9F /* LocalRecipe.swift in Sources */,
 				637ED8F5262F27160060562F /* RegisterViewController.swift in Sources */,
 				63901C7D26429241004C415C /* Addable.swift in Sources */,
 				63C154272631BCF900FEE90D /* Recipe.swift in Sources */,
