@@ -23,7 +23,7 @@ class Recipe {
         ]
     }
     
-    init(author : String, name : String, time : String, type : String , description : String, methods : String, difficulty : String, image : UIImage, ingredients : String) {
+    init(name : String, time : String, type : String, methods : String, difficulty : String, ingredients : String) {
         self.name = name
         self.time = time
         self.type = type
