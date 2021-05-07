@@ -14,6 +14,7 @@ import CoreData
 
 class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable, Addable, Changeable {
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var profileImage: UIButton!
@@ -31,7 +32,8 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        indicator.startAnimating()
+        indicator.isHidden = false
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -78,6 +80,8 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             DispatchQueue.main.async { // to make sure that UI is updated as soon as we get the response
                 let image = UIImage(data: data)
                 self.myImageView.image = image
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         })
         task.resume()

@@ -369,6 +369,10 @@
                                 <rect key="frame" x="92" y="99" width="230" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UFW-1t-glf">
+                                <rect key="frame" x="188.5" y="248" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TMr-cX-8A7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -378,6 +382,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="addButton" destination="wxd-BA-nlD" id="3Eo-vc-9tj"/>
+                        <outlet property="indicator" destination="UFW-1t-glf" id="Mr0-0h-l33"/>
                         <outlet property="myImageView" destination="9tN-Cd-zya" id="R2Z-Ua-9wF"/>
                         <outlet property="myTableView" destination="Tqk-h8-Kfm" id="tmm-yR-QDA"/>
                         <outlet property="nameSurname" destination="nGb-0O-ILM" id="fEB-VL-00H"/>
