@@ -13,6 +13,7 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var levelPicker: UIPickerView!
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var nameTextInput: UITextField!
     @IBOutlet weak var timeTextInput: UITextField!
     @IBOutlet weak var ingredientsTextView: UITextView!
@@ -22,6 +23,8 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var pickerData = ["easy", "medium", "hard"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.barTintColor = UIColor(named: "darkGreen")
+        navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         // Connect data:
         self.levelPicker.delegate = self
         self.levelPicker.dataSource = self
