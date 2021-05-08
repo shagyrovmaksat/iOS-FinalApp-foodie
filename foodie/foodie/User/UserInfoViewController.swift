@@ -32,6 +32,8 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.barTintColor = UIColor(named: "darkGreen")
+        navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         indicator.startAnimating()
         indicator.isHidden = false
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {

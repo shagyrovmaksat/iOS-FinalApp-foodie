@@ -27,6 +27,8 @@ class DetailRecipeViewController: UIViewController, Editable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.barTintColor = UIColor(named: "darkGreen")
+        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         imageView.image = image
         navigationBar.topItem?.title = name
         timeLabel.text = "Time it takes: " + time!
