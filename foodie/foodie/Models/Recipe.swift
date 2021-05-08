@@ -9,7 +9,7 @@ class Recipe {
     var difficulty : String?
     var ingredients : String?
     var methods : String?
-    
+    var imageName: String?
     var image : UIImage?
     
     var dict : [String : String] {
@@ -19,17 +19,19 @@ class Recipe {
             "time" : time!,
             "difficulty" : difficulty!,
             "ingredients" : ingredients!,
-            "methods" : methods!
+            "methods" : methods!,
+            "imageName" : imageName!
         ]
     }
     
-    init(name : String, time : String, type : String, methods : String, difficulty : String, ingredients : String) {
+    init(name : String, time : String, type : String, methods : String, difficulty : String, ingredients : String, imageName: String) {
         self.name = name
         self.time = time
         self.type = type
         self.methods = methods
         self.difficulty = difficulty
         self.ingredients = ingredients
+        self.imageName = imageName
     }
     
     init(snapshot : DataSnapshot) {
@@ -40,6 +42,7 @@ class Recipe {
             ingredients = value["ingredients"]
             difficulty = value["difficulty"]
             type = value["type"]
+            imageName = value["imageName"]
         }
     }
 }
