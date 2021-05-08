@@ -17,6 +17,7 @@ class AddRecipeTempVC: UIViewController {
     @IBOutlet weak var recipeLevel: UITextField!
     @IBOutlet weak var recipeIngredients: UITextView!
     @IBOutlet weak var recipeSteps: UITextView!
+    @IBOutlet weak var recipeImageName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class AddRecipeTempVC: UIViewController {
     }
     
     @IBAction func addRecipeToFirebase(_ sender: Any) {
-        let newRecipe = Recipe(name: recipeName.text!, time: recipeTime.text!, type: recipeType.text!, methods: recipeSteps.text!, difficulty: recipeLevel.text!, ingredients: recipeIngredients.text!)
+        let newRecipe = Recipe(name: recipeName.text!, time: recipeTime.text!, type: recipeType.text!, methods: recipeSteps.text!, difficulty: recipeLevel.text!, ingredients: recipeIngredients.text!, imageName: recipeImageName.text!)
         
         Database.database().reference().child("recipes").childByAutoId().setValue(newRecipe.dict)
         self.dismiss(animated: true, completion: nil)
