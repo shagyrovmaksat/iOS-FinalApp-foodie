@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="icr-BT-H3W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="icr-BT-H3W">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -173,7 +173,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="Th3-vb-IlL">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Th3-vb-IlL" id="yet-Jv-huT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -404,13 +404,13 @@
                                 <items>
                                     <navigationItem title="Profile" id="elg-2v-LWI">
                                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="OAN-RS-wYl">
-                                            <color key="tintColor" name="darkGreen"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="logOutPressed:" destination="8SA-pJ-3eS" id="5LQ-aq-Nft"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Vm1-Dq-4zC">
-                                            <color key="tintColor" name="darkGreen"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="LFa-fH-cHu" kind="show" id="jq9-go-xAf"/>
                                             </connections>
@@ -431,7 +431,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="350" id="eBX-la-x7y" customClass="ProfileRecipeCell" customModule="foodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="350"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBX-la-x7y" id="p16-y1-SK9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
@@ -664,13 +664,13 @@
                                 <items>
                                     <navigationItem title="Recipe Name" id="eFA-o4-Jz0">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="kJW-KO-n9v">
-                                            <color key="tintColor" name="darkGreen"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="backPressed:" destination="CU7-ha-SGW" id="k7v-7r-NoJ"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Edit" id="1fr-qk-G31">
-                                            <color key="tintColor" name="darkGreen"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="Yqc-35-ZRV" kind="show" id="mnb-aW-W5T"/>
                                             </connections>
@@ -1116,13 +1116,13 @@
                                 <items>
                                     <navigationItem title="New recipe" id="Ipv-VH-4Wo">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="NPd-0i-Vgm">
-                                            <color key="tintColor" name="darkGreen"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="backPressed:" destination="WNk-1o-mRc" id="2ym-yk-m6S"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="cEr-IT-X3i">
-                                            <color key="tintColor" name="darkGreen"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="savePressed:" destination="WNk-1o-mRc" id="pgv-IK-6dp"/>
                                             </connections>
@@ -1260,6 +1260,7 @@
                         <outlet property="levelPicker" destination="0XD-M5-KFh" id="Azh-tV-mYX"/>
                         <outlet property="methodsTextView" destination="oLm-7u-KIH" id="xEY-WO-pGt"/>
                         <outlet property="nameTextInput" destination="PyE-58-2oF" id="d9G-GF-ffZ"/>
+                        <outlet property="navigationBar" destination="ama-Lk-ArZ" id="hNp-Nf-aPL"/>
                         <outlet property="recipeImageView" destination="wfZ-rR-4sv" id="jZy-D7-42y"/>
                         <outlet property="timeTextInput" destination="nhD-6n-6bE" id="xTF-p2-moM"/>
                     </connections>
