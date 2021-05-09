@@ -4,11 +4,14 @@ import Firebase
 
 class Recipe {
     var type : String?
+    
     var name : String?
     var time : String?
     var difficulty : String?
+    
     var ingredients : String?
     var methods : String?
+    
     var imageName: String?
     var image : UIImage?
     
@@ -23,7 +26,7 @@ class Recipe {
             "imageName" : imageName!
         ]
     }
-    
+
     init(name : String, time : String, type : String, methods : String, difficulty : String, ingredients : String, imageName: String) {
         self.name = name
         self.time = time

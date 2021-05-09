@@ -9,6 +9,11 @@ import UIKit
 
 class RecipesCustomCell: UITableViewCell {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var difficulty: UILabel!
+    @IBOutlet weak var recipeImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +24,9 @@ class RecipesCustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10))
+    }
 }

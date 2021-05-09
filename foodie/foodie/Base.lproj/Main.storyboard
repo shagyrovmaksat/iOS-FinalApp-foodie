@@ -172,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="294" width="414" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="313" id="jwE-dF-uwu" customClass="RecipesCustomCell" customModule="foodie" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="313" id="jwE-dF-uwu" customClass="RecipesCustomCell" customModule="foodie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="313"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jwE-dF-uwu" id="aAA-pG-SQt">
@@ -191,7 +191,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="un9-9i-h84"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -239,8 +239,18 @@
                                                 <constraint firstItem="LrM-QS-A4b" firstAttribute="leading" secondItem="aAA-pG-SQt" secondAttribute="leadingMargin" id="szy-ws-MhU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="difficulty" destination="LrM-QS-A4b" id="cmp-C3-J5Z"/>
+                                            <outlet property="name" destination="6p2-cO-yre" id="XT2-1b-rJW"/>
+                                            <outlet property="recipeImage" destination="Dth-pL-aQY" id="QcG-QM-9oh"/>
+                                            <outlet property="time" destination="tui-xh-zo2" id="oRy-RW-0TT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hTH-eL-lDg" id="I1H-Tz-K0i"/>
+                                    <outlet property="delegate" destination="hTH-eL-lDg" id="dKu-tV-uIA"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8u6-Ce-xPu"/>
