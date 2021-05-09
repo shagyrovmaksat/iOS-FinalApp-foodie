@@ -497,12 +497,17 @@
                                                 <action selector="logOutPressed:" destination="8SA-pJ-3eS" id="5LQ-aq-Nft"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Vm1-Dq-4zC">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <segue destination="LFa-fH-cHu" kind="show" id="jq9-go-xAf"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="h7D-D9-s73">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </barButtonItem>
+                                            <barButtonItem image="square.and.pencil" catalog="system" style="plain" id="Vm1-Dq-4zC">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <segue destination="LFa-fH-cHu" kind="show" id="jq9-go-xAf"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1359,9 +1364,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="logo" width="1024" height="1024"/>
         <image name="profile" width="512" height="512"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="tabbar1" width="30" height="30"/>
         <image name="tabbar2" width="30" height="30"/>
         <image name="tabbar3" width="30" height="30"/>
