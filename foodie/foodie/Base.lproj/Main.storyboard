@@ -123,6 +123,9 @@
                                         </segments>
                                         <color key="tintColor" name="AccentColor"/>
                                         <color key="selectedSegmentTintColor" name="darkGreen"/>
+                                        <connections>
+                                            <action selector="change:" destination="hTH-eL-lDg" eventType="valueChanged" id="Of3-G2-FUo"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Z-L5-pOL">
                                         <rect key="frame" x="8" y="158" width="140" height="36"/>
@@ -270,7 +273,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="myTableView" destination="H49-mC-4hl" id="icU-m7-CTG"/>
-                        <outlet property="segmentedControl" destination="uvv-lL-J6K" id="A34-1P-x5o"/>
+                        <outlet property="segmentedControl" destination="uvv-lL-J6K" id="clP-VK-E21"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWN-cc-LRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

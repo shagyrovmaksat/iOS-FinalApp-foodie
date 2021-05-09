@@ -19,7 +19,9 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     let ref = Database.database().reference()
     
     var recipes : [Recipe] = []
-    
+    var showRecipes : [Recipe] = []
+    var state = "breakfast"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.separatorStyle = .none
@@ -38,8 +40,18 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             self?.recipes.reverse()
             self?.loadImages()
-            self?.myTableView.reloadData()
+            self?.prepareRecipes()
         }
+    }
+    
+    @IBAction func change(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0: state = "breakfast";
+        case 1: state = "lunch";
+        case 2: state = "dinner";
+        default: break;
+        }
+        prepareRecipes()
     }
     
     func loadImages() {
@@ -56,17 +68,27 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func prepareRecipes() {
+        showRecipes.removeAll()
+        for recipe in recipes {
+            if(recipe.type == state) {
+                showRecipes.append(recipe)
+            }
+        }
+        myTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        recipes.count
+        showRecipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? RecipesCustomCell
         
-        cell?.name.text = recipes[indexPath.row].name
-        cell?.time.text = recipes[indexPath.row].time
-        cell?.difficulty.text = recipes[indexPath.row].difficulty
-        cell?.recipeImage.image = recipes[indexPath.row].image
+        cell?.name.text = showRecipes[indexPath.row].name
+        cell?.time.text = showRecipes[indexPath.row].time
+        cell?.difficulty.text = showRecipes[indexPath.row].difficulty
+        cell?.recipeImage.image = showRecipes[indexPath.row].image
         
         cell?.contentView.layer.borderWidth = 2.0
         cell?.contentView.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
