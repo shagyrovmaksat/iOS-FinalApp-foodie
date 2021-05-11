@@ -23,7 +23,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var addButton: UIButton!
 
     var myRecipes: [NSManagedObject] = []
-
+    static var myFavRecipes: [Recipe] = []
     var currentUser: User?
     var nameSurnameArr: [String] = []
     
