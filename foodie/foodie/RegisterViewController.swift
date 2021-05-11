@@ -49,8 +49,8 @@ class RegisterViewController: UIViewController {
                             "name": name!
                         ]
                         Database.database().reference().child("users").child(result!.user.uid).setValue(userData)
-                        let listOfIngredients = ["0" : " "]
-                        Database.database().reference().child("users").child(result!.user.uid).child("favoriteRecipes").setValue(listOfIngredients)
+                        let favRecipes: [Recipe] = []
+                        Database.database().reference().child("users").child(result!.user.uid).child("favoriteRecipes").setValue(favRecipes)
                         self?.showMessage(title: "Success", message: "Please verify your email")
                     }
                 }

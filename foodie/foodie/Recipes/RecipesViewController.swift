@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseAuth
 
 class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,9 +22,12 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     var recipes : [Recipe] = []
     var showRecipes : [Recipe] = []
     var state = "breakfast"
-
+    var curIdx = 0
+    var currentUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentUser = Auth.auth().currentUser
         myTableView.separatorStyle = .none
         myTableView.rowHeight = 350
         let font = UIFont.systemFont(ofSize: 20)
@@ -34,13 +38,37 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
             self?.recipes.removeAll()
             for child in snapshot.children {
                 if let snap = child as? DataSnapshot {
-                    let tweet = Recipe(snapshot: snap)
-                    self?.recipes.append(tweet)
+                    let recipe = Recipe(snapshot: snap)
+                    self?.recipes.append(recipe)
                 }
             }
             self?.recipes.reverse()
             self?.loadImages()
             self?.prepareRecipes()
+        }
+    }
+    
+    
+    @IBAction func addToFavs(_ sender: UIButton) {
+        let buttonPos = sender.convert(CGPoint.zero, to: self.myTableView)
+        let indexPath = self.myTableView.indexPathForRow(at: buttonPos)
+//        print(showRecipes[indexPath!.row].name!)
+//        UserInfoViewController.myFavRecipes.append(showRecipes[indexPath!.row])
+//        print(UserInfoViewController.myFavRecipes)
+        var isFavourite = false
+        let usersRef = Database.database().reference().child("users").child(currentUser!.uid).child("favoriteRecipes")
+        let queryRef = usersRef.queryOrdered(byChild: "name").queryEqual(toValue: self.recipes[indexPath!.row].name)
+        queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            for snap in snapshot.children {
+                let userSnap = snap as! DataSnapshot
+                let uid = userSnap.key
+                Database.database().reference().child("users").child((self.currentUser!.uid)).child("favoriteRecipes/\(uid)").removeValue()
+                print("key = \(uid)")
+            }
+        })
+        if isFavourite == false{
+            Database.database().reference().child("users").child(currentUser!.uid).child("favoriteRecipes").childByAutoId().setValue(showRecipes[indexPath!.row].dict)
+            print("added")
         }
     }
     
@@ -101,5 +129,6 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myTableView.deselectRow(at: indexPath, animated: true)
+        curIdx = indexPath.row
     }
 }
