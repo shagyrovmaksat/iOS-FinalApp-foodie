@@ -247,6 +247,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="difficulty" destination="LrM-QS-A4b" id="cmp-C3-J5Z"/>
+                                            <outlet property="icon" destination="Dtp-IL-4Lx" id="eBN-3V-cXq"/>
                                             <outlet property="name" destination="6p2-cO-yre" id="XT2-1b-rJW"/>
                                             <outlet property="recipeImage" destination="Dth-pL-aQY" id="QcG-QM-9oh"/>
                                             <outlet property="time" destination="tui-xh-zo2" id="oRy-RW-0TT"/>

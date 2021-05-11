@@ -22,6 +22,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TODO: from recipe to detail
         currentUser = Auth.auth().currentUser
         myTableView.separatorStyle = .none
         myTableView.rowHeight = 350
@@ -54,6 +55,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         cell?.time.text = recipes[indexPath.row].time
         cell?.difficulty.text = recipes[indexPath.row].difficulty
         cell?.recipeImage.image = recipes[indexPath.row].image
+        
         
         cell?.contentView.layer.borderWidth = 2.0
         cell?.contentView.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
@@ -99,5 +101,4 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         self.recipes.remove(at: indexPath!.row)
         myTableView.reloadData()
     }
-    
 }
