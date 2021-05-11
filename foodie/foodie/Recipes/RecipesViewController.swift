@@ -45,6 +45,10 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
             self?.recipes.reverse()
             self?.loadImages()
             self?.prepareRecipes()
+            //FIXME: images loading
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+                self!.myTableView.reloadData()
+            }
         }
     }
     
@@ -52,18 +56,20 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func addToFavs(_ sender: UIButton) {
         let buttonPos = sender.convert(CGPoint.zero, to: self.myTableView)
         let indexPath = self.myTableView.indexPathForRow(at: buttonPos)
-//        print(showRecipes[indexPath!.row].name!)
-//        UserInfoViewController.myFavRecipes.append(showRecipes[indexPath!.row])
-//        print(UserInfoViewController.myFavRecipes)
         var isFavourite = false
         let usersRef = Database.database().reference().child("users").child(currentUser!.uid).child("favoriteRecipes")
-        let queryRef = usersRef.queryOrdered(byChild: "name").queryEqual(toValue: self.recipes[indexPath!.row].name)
+        let queryRef = usersRef.queryOrdered(byChild: "name").queryEqual(toValue: self.showRecipes[indexPath!.row].name)
         queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
             for snap in snapshot.children {
                 let userSnap = snap as! DataSnapshot
-                let uid = userSnap.key
-                Database.database().reference().child("users").child((self.currentUser!.uid)).child("favoriteRecipes/\(uid)").removeValue()
-                print("key = \(uid)")
+                // if name == showRecipes[indexPath!.row].name { isFavourite = true }
+                let recipe = Recipe(snapshot: userSnap)
+                if recipe.name == self.showRecipes[indexPath!.row].name{
+                    isFavourite = true
+                    let uid = userSnap.key
+                    Database.database().reference().child("users").child((self.currentUser!.uid)).child("favoriteRecipes/\(uid)").removeValue()
+                    print("key = \(uid)")
+                }
             }
         })
         if isFavourite == false{

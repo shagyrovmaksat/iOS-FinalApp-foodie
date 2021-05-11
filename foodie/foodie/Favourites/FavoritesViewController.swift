@@ -34,11 +34,12 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                     self?.recipes.append(recipe)
                 }
             }
+            //FIXME: images loading
             self?.recipes.reverse()
             self?.loadImages()
-            // TODO: fix images loading
-            // FIXME: images
-            self?.myTableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+                self!.myTableView.reloadData()
+            }
         }
     }
     
@@ -79,6 +80,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
               }
             }
         }
+        self.myTableView.reloadData()
     }
     
     @IBAction func removeFromFavs(_ sender: UIButton) {
@@ -95,7 +97,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         })
         self.recipes.remove(at: indexPath!.row)
-//        self.myTableView.deleteRows(at: [indexPath], with: .fade)
         myTableView.reloadData()
     }
     
