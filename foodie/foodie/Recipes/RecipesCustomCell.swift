@@ -13,6 +13,7 @@ class RecipesCustomCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var icon: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
