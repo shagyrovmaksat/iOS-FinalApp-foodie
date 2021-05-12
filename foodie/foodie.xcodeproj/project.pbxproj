@@ -23,6 +23,7 @@
 		63901C7D26429241004C415C /* Addable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63901C7C26429241004C415C /* Addable.swift */; };
 		63BC29212646ABD300878D69 /* RecipesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC29202646ABD300878D69 /* RecipesCustomCell.swift */; };
 		63C154272631BCF900FEE90D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C154262631BCF900FEE90D /* Recipe.swift */; };
+		63F1E54E264BC5AD009CDC8F /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1E54D264BC5AD009CDC8F /* RecipeDetailVC.swift */; };
 		63FB2588262F5D2700366C9E /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB2587262F5D2700366C9E /* UserInfoViewController.swift */; };
 		63FB258B262F5D4C00366C9E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB258A262F5D4C00366C9E /* FavoritesViewController.swift */; };
 		63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB258D262F5D5A00366C9E /* RecipesViewController.swift */; };
@@ -53,6 +54,7 @@
 		63901C7C26429241004C415C /* Addable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addable.swift; sourceTree = "<group>"; };
 		63BC29202646ABD300878D69 /* RecipesCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCustomCell.swift; sourceTree = "<group>"; };
 		63C154262631BCF900FEE90D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		63F1E54D264BC5AD009CDC8F /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 		63FB2587262F5D2700366C9E /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		63FB258A262F5D4C00366C9E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		63FB258D262F5D5A00366C9E /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				6375E16326403CC600F7967D /* User */,
 				6375E16426403CE400F7967D /* Recipes */,
 				6375E16526403CE900F7967D /* Favourites */,
+				63F1E54D264BC5AD009CDC8F /* RecipeDetailVC.swift */,
 				6375E16626403D2A00F7967D /* Models */,
 				6375E16726403D3700F7967D /* Protocols */,
 				633AC06A262F4250007632D9 /* GoogleService-Info.plist */,
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				637ED8DC262F26B80060562F /* AppDelegate.swift in Sources */,
+				63F1E54E264BC5AD009CDC8F /* RecipeDetailVC.swift in Sources */,
 				E5B4FB582632B554008E55A5 /* ProfileRecipeCell.swift in Sources */,
 				E52818FD2636F5E000D935D6 /* LaunchScreenVC.swift in Sources */,
 				63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */,

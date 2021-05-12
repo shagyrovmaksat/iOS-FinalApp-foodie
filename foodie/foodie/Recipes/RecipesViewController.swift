@@ -137,4 +137,17 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         myTableView.deselectRow(at: indexPath, animated: true)
         curIdx = indexPath.row
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let index = myTableView.indexPathForSelectedRow?.row {
+            let destination = segue.destination as! RecipeDetailVC
+            destination.nameText = showRecipes[index].name
+            destination.timeText = showRecipes[index].time
+            destination.difficultyText = showRecipes[index].difficulty
+            destination.ingredientsText = showRecipes[index].ingredients
+            destination.methodsText = showRecipes[index].methods
+            destination.image = showRecipes[index].image
+        }
+    }
 }
