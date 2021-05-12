@@ -21,6 +21,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var recipes : [Recipe] = []
     var showRecipes : [Recipe] = []
+    var favRecipes : [Recipe] = []
     var state = "breakfast"
     var curIdx = 0
     var currentUser: User?
@@ -50,6 +51,18 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
             // TODO: indicator for images
             DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                 self!.myTableView.reloadData()
+            }
+        }
+    }
+    
+    func getFavourites(){
+        Database.database().reference().child("users").child(currentUser!.uid).child("favoriteRecipes").observe(.value) { [weak self](snapshot) in
+            self?.favRecipes.removeAll()
+            for child in snapshot.children {
+                if let snap = child as? DataSnapshot {
+                    let recipe = Recipe(snapshot: snap)
+                    self?.favRecipes.append(recipe)
+                }
             }
         }
     }
@@ -114,6 +127,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
                 showRecipes.append(recipe)
             }
         }
+        getFavourites()
         myTableView.reloadData()
     }
     
@@ -128,7 +142,17 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell?.time.text = showRecipes[indexPath.row].time
         cell?.difficulty.text = showRecipes[indexPath.row].difficulty
         cell?.recipeImage.image = showRecipes[indexPath.row].image
-//        cell?.icon.imageView?.image = UIImage.init(named: "notFav")
+        
+        var isFav = false
+        for recipe in favRecipes{
+            if recipe.name == showRecipes[indexPath.row].name{
+                isFav = true
+            }
+        }
+//        print(isFav)
+        if isFav{ cell?.icon.setImage(UIImage.init(named: "isFav"), for: .normal) }
+        else{ cell?.icon.setImage(UIImage.init(named: "notFav"), for: .normal) }
+        isFav = false
         
         cell?.contentView.layer.borderWidth = 2.0
         cell?.contentView.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
