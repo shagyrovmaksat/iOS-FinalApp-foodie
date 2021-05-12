@@ -25,13 +25,13 @@ class TabbarVC: RAMAnimatedTabBarController  {
         let favVC = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController")
         let recipesVC = storyboard.instantiateViewController(withIdentifier: "RecipesViewController")
         userVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage.init(named: "tabbar2"), tag: 1)
-        (userVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMFlipTopTransitionItemAnimations()
+        (userVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMLeftRotationAnimation()
         
         favVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage.init(named: "tabbar3"), tag: 2)
-        (favVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
+        (favVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMRightRotationAnimation()
         
         recipesVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: UIImage.init(named: "tabbar1"), tag: 3)
-        (recipesVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMRightRotationAnimation()
+        (recipesVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMBounceAnimation()
         
         setViewControllers([userVC, recipesVC, favVC], animated: false)
     }
