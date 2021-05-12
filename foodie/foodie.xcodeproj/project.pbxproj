@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A1A9AE0E15765BBF06EC23D /* Pods_foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59A774A72161F83D8223F15 /* Pods_foodie.framework */; };
 		6317C05A2641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6317C0582641757300DA0A9F /* ModelForMyRecipe.xcdatamodeld */; };
+		63181ACE264C1239007E189A /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63181ACD264C1239007E189A /* RecipeDetailVC.swift */; };
 		633AC06B262F4250007632D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633AC06A262F4250007632D9 /* GoogleService-Info.plist */; };
 		635A377426442A01009F0A3E /* Changeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A377326442A01009F0A3E /* Changeable.swift */; };
 		6375E171264048C500F7967D /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375E170264048C500F7967D /* DetailRecipeViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		6317C0592641757300DA0A9F /* ModelForMyRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelForMyRecipe.xcdatamodel; sourceTree = "<group>"; };
+		63181ACD264C1239007E189A /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 		633AC06A262F4250007632D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		635A377326442A01009F0A3E /* Changeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changeable.swift; sourceTree = "<group>"; };
 		6375E170264048C500F7967D /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				6375E16326403CC600F7967D /* User */,
 				6375E16426403CE400F7967D /* Recipes */,
 				6375E16526403CE900F7967D /* Favourites */,
+				63181ACD264C1239007E189A /* RecipeDetailVC.swift */,
 				6375E16626403D2A00F7967D /* Models */,
 				6375E16726403D3700F7967D /* Protocols */,
 				633AC06A262F4250007632D9 /* GoogleService-Info.plist */,
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				637ED8DC262F26B80060562F /* AppDelegate.swift in Sources */,
+				63181ACE264C1239007E189A /* RecipeDetailVC.swift in Sources */,
 				E5B4FB582632B554008E55A5 /* ProfileRecipeCell.swift in Sources */,
 				E52818FD2636F5E000D935D6 /* LaunchScreenVC.swift in Sources */,
 				63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */,

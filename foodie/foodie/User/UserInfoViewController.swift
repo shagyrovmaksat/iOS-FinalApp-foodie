@@ -88,6 +88,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         })
         task.resume()
         self.navBar.topItem?.title = currentUser?.email
+        self.myImageView.makeRounded()
     }
     
     @IBAction func photoPicker(_ sender: UIButton) {
@@ -252,6 +253,18 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             destination.delegate = self
             destination.delegateForChange = self
         }
+    }
+}
+
+extension UIImageView {
+
+    func makeRounded() {
+
+        self.layer.borderWidth = 5
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
+        self.layer.cornerRadius = self.frame.height / 2
+        self.clipsToBounds = true
     }
 }
 
