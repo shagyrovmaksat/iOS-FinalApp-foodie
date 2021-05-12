@@ -101,4 +101,17 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         self.recipes.remove(at: indexPath!.row)
         myTableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let index = myTableView.indexPathForSelectedRow?.row {
+            let destination = segue.destination as! RecipeDetailVC
+            destination.nameText = recipes[index].name
+            destination.timeText = recipes[index].time
+            destination.difficultyText = recipes[index].difficulty
+            destination.ingredientsText = recipes[index].ingredients
+            destination.methodsText = recipes[index].methods
+            destination.image = recipes[index].image
+        }
+    }
 }
