@@ -22,11 +22,15 @@ class RecipeDetailVC: UIViewController {
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var methodsTV: UITextView!
     @IBOutlet weak var ingredientsTV: UITextView!
+    @IBOutlet weak var viewWithCorner: UIView!
     
     @IBOutlet weak var navBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewWithCorner.layer.cornerRadius = 5
+        viewWithCorner.layer.borderWidth = 3
+        viewWithCorner.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
         navBar.barTintColor = UIColor(named: "darkGreen")
         navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         recipeImage.image = image

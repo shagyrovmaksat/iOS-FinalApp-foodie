@@ -1675,6 +1675,7 @@
                         <outlet property="navBar" destination="rQP-DA-sST" id="uVD-Ij-fPC"/>
                         <outlet property="recipeImage" destination="WfE-Ys-nrl" id="Kg9-tb-cmy"/>
                         <outlet property="time" destination="DjO-Wn-myp" id="4ay-hf-RCc"/>
+                        <outlet property="viewWithCorner" destination="ZG4-uj-kHb" id="qra-Vm-VEI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weI-PA-lX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
