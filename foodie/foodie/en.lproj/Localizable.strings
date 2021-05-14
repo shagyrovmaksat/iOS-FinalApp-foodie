@@ -5,3 +5,31 @@
   Created by Shagirov Maksat on 14.05.2021.
   
 */
+
+"Log Out" = "Log Out";
+"Profile" = "Profile";
+"My recipes" = "My recipes";
+"Back" = "Back";
+"Settings" = "Settings";
+"Hi! Here you can edit your profile" = "Hi! Here you can edit your profile";
+"Enter new data:" = "Enter new data:";
+"Enter new name" = "Enter new name";
+"Enter new surname" = "Enter new surname";
+"Save" = "Save";
+"New recipe" = "New recipe";
+"Name" = "Name";
+"Time it takes" = "Time it takes";
+"Level of difficulty:" = "Level of difficulty:";
+"Ingredients" = "Ingredients";
+"Methods" = "Methods";
+"easy" = "easy";
+"medium" = "medium";
+"hard" = "hard";
+"Edit" = "Edit";
+"Hi! Here you can edit your recipe" = "Hi! Here you can edit your recipe";
+"Recipes" = "Recipes";
+"Breakfast" = "Breakfast";
+"Lunch" = "Lunch";
+"Dinner" = "Dinner";
+"Recipe" = "Recipe";
+"Favourite Recipes" = "Favourite Recipes";
