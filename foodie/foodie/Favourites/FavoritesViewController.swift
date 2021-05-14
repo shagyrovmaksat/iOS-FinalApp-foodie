@@ -86,20 +86,27 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func removeFromFavs(_ sender: UIButton) {
+        
         let buttonPos = sender.convert(CGPoint.zero, to: self.myTableView)
         let indexPath = self.myTableView.indexPathForRow(at: buttonPos)
-        let usersRef = Database.database().reference().child("users").child(currentUser!.uid).child("favoriteRecipes")
-        let queryRef = usersRef.queryOrdered(byChild: "name").queryEqual(toValue: self.recipes[indexPath!.row].name)
-        queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            for snap in snapshot.children {
-                let userSnap = snap as! DataSnapshot
-                let uid = userSnap.key
-                Database.database().reference().child("users").child((self.currentUser!.uid)).child("favoriteRecipes/\(uid)").removeValue()
-                print("key = \(uid)")
-            }
-        })
-        self.recipes.remove(at: indexPath!.row)
-        myTableView.reloadData()
+        
+        UIView.animate(withDuration: 1) {
+            self.myTableView.cellForRow(at: indexPath!)?.contentView.frame.origin.x = (self.myTableView.cellForRow(at: indexPath!)?.contentView.frame.width)!
+            self.myTableView.cellForRow(at: indexPath!)?.contentView.alpha = 0
+        } completion: { [self] (Bool) in
+            let usersRef = Database.database().reference().child("users").child(currentUser!.uid).child("favoriteRecipes")
+            let queryRef = usersRef.queryOrdered(byChild: "name").queryEqual(toValue: self.recipes[indexPath!.row].name)
+            queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                for snap in snapshot.children {
+                    let userSnap = snap as! DataSnapshot
+                    let uid = userSnap.key
+                    Database.database().reference().child("users").child((self.currentUser!.uid)).child("favoriteRecipes/\(uid)").removeValue()
+                    print("key = \(uid)")
+                }
+            })
+            recipes.remove(at: indexPath!.row)
+            myTableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
