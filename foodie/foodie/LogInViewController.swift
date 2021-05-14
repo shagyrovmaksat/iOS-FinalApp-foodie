@@ -23,7 +23,6 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         self.logInButton.layer.cornerRadius = 5
         indicator.isHidden = true
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,12 +55,9 @@ class LogInViewController: UIViewController {
     }
     
     func goToMain() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        if let mainPage = storyboard.instantiateViewController(identifier: "Main") as? RAMAnimatedTabBarController {
         let mainPage = TabbarVC()
         mainPage.modalPresentationStyle = .fullScreen
         present(mainPage, animated: true)
-//        }
     }
     
     func showMessage(title : String, message : String) {
