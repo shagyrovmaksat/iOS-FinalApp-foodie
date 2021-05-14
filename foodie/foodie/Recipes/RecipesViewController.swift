@@ -91,7 +91,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print("key = \(uid)")
             }
         })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
             if isFavourite == false{
                 cell.icon.setImage(UIImage.init(named: "isFav"), for: .normal)
                 Database.database().reference().child("users").child(self.currentUser!.uid).child("favoriteRecipes").childByAutoId().setValue(self.showRecipes[indexPath!.row].dict)
@@ -143,8 +143,8 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? RecipesCustomCell
         
         cell?.name.text = showRecipes[indexPath.row].name
-        cell?.time.text = showRecipes[indexPath.row].time
-        cell?.difficulty.text = showRecipes[indexPath.row].difficulty
+        cell?.time.text = "Time it takes: " + showRecipes[indexPath.row].time!
+        cell?.difficulty.text = "Level of difficulty: " + showRecipes[indexPath.row].difficulty!
         cell?.recipeImage.image = showRecipes[indexPath.row].image
         
         var isFav = false

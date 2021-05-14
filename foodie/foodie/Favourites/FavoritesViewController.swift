@@ -52,8 +52,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "myFavCell") as? RecipesCustomCell
         
         cell?.name.text = recipes[indexPath.row].name
-        cell?.time.text = recipes[indexPath.row].time
-        cell?.difficulty.text = recipes[indexPath.row].difficulty
+        cell?.time.text = "Time it takes: " + recipes[indexPath.row].time!
+        cell?.difficulty.text = "Level of difficulty: " + recipes[indexPath.row].difficulty!
         cell?.recipeImage.image = recipes[indexPath.row].image
         
         

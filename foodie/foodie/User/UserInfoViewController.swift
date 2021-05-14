@@ -108,8 +108,8 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
 //        cell?.recipeImage.image = myRecipes[indexPath.row].image
 // //        print(cell?.imageView?.image?.size.height)
         cell?.recipeName.text = myRecipes[indexPath.row].value(forKey: "name") as? String
-        cell?.recipeTime.text = myRecipes[indexPath.row].value(forKey: "time") as? String
-        cell?.recipeLevel.text = myRecipes[indexPath.row].value(forKey: "difficulty") as? String
+        cell?.recipeTime.text = "Time it takes: " + ((myRecipes[indexPath.row].value(forKey: "time") as? String)!)
+        cell?.recipeLevel.text = "Level of difficulty: " + ((myRecipes[indexPath.row].value(forKey: "difficulty") as? String)!)
         cell?.recipeImage.image = UIImage(data: (myRecipes[indexPath.row].value(forKey: "image") as? Data)!)
         
         cell?.contentView.layer.borderWidth = 2.0
