@@ -71,6 +71,9 @@
 		E52A463E263ADC45004F0B49 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		E549139826442E360071D2D8 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		E555E7782645315C000C6C54 /* AddRecipeTempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeTempVC.swift; sourceTree = "<group>"; };
+		E555E7C7264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E555E7C8264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		E555E7C9264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRecipeCell.swift; sourceTree = "<group>"; };
 		FB0CAA0CE66875721BF8C2A9 /* Pods-foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.debug.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,6 +245,7 @@
 				en,
 				Base,
 				kk,
+				ru,
 			);
 			mainGroup = 637ED8CF262F26B80060562F;
 			productRefGroup = 637ED8D9262F26B80060562F /* Products */;
@@ -348,6 +352,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				637ED8E2262F26B80060562F /* Base */,
+				E555E7C8264E5753000C6C54 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				637ED8E7262F26B90060562F /* Base */,
+				E555E7C7264E5753000C6C54 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 			children = (
 				639708DD264E50670023432C /* en */,
 				639708DF264E518E0023432C /* kk */,
+				E555E7C9264E5753000C6C54 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

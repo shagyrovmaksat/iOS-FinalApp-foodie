@@ -1,0 +1,264 @@
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "1fr-qk-G31"; */
+"1fr-qk-G31.title" = "Edit";
+
+/* Class = "UILabel"; text = "Recipes"; ObjectID = "36Z-L5-pOL"; */
+"36Z-L5-pOL.text" = "Recipes";
+
+/* Class = "UIButton"; normalTitle = "KAZ"; ObjectID = "3RH-Be-gnl"; */
+"3RH-Be-gnl.normalTitle" = "KAZ";
+
+/* Class = "UILabel"; text = "Level of difficulty:"; ObjectID = "3xX-VM-XAo"; */
+"3xX-VM-XAo.text" = "Level of difficulty:";
+
+/* Class = "UITextField"; placeholder = "Image name"; ObjectID = "4Jm-Xo-Qqq"; */
+"4Jm-Xo-Qqq.placeholder" = "Image name";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "4Q9-CG-r5I"; */
+"4Q9-CG-r5I.placeholder" = "Name";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "4W0-EQ-Ud3"; */
+"4W0-EQ-Ud3.placeholder" = "Email";
+
+/* Class = "UINavigationItem"; title = "Recipe"; ObjectID = "4dm-fx-lT4"; */
+"4dm-fx-lT4.title" = "Recipe";
+
+/* Class = "UILabel"; text = "Recipe Name"; ObjectID = "6p2-cO-yre"; */
+"6p2-cO-yre.text" = "Recipe Name";
+
+/* Class = "UILabel"; text = "My recipes"; ObjectID = "6p2-st-Aoi"; */
+"6p2-st-Aoi.text" = "My recipes";
+
+/* Class = "UIButton"; normalTitle = "Create an account"; ObjectID = "7fp-YK-E6w"; */
+"7fp-YK-E6w.normalTitle" = "Create an account";
+
+/* Class = "UINavigationItem"; title = "New recipe"; ObjectID = "8JL-5A-o9E"; */
+"8JL-5A-o9E.title" = "New recipe";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "9K6-R4-B4c"; */
+"9K6-R4-B4c.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Bds-hO-dbm"; */
+"Bds-hO-dbm.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Ckg-jt-qra"; */
+"Ckg-jt-qra.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Enter new data:"; ObjectID = "Cvx-2B-7XE"; */
+"Cvx-2B-7XE.text" = "Enter new data:";
+
+/* Class = "UILabel"; text = "Time it takes:"; ObjectID = "DjO-Wn-myp"; */
+"DjO-Wn-myp.text" = "Time it takes:";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "Euy-PQ-aF1"; */
+"Euy-PQ-aF1.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Log In"; ObjectID = "F80-D9-06B"; */
+"F80-D9-06B.text" = "Log In";
+
+/* Class = "UILabel"; text = "Hi! Here you can edit your recipe"; ObjectID = "FFP-kI-CTy"; */
+"FFP-kI-CTy.text" = "Hi! Here you can edit your recipe";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "FwP-AT-0ru"; */
+"FwP-AT-0ru.normalTitle" = "Log In";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "G34-wP-RYs"; */
+"G34-wP-RYs.title" = "Add";
+
+/* Class = "UITextField"; placeholder = "Level of difficulty"; ObjectID = "GC7-Zq-fbZ"; */
+"GC7-Zq-fbZ.placeholder" = "Level of difficulty";
+
+/* Class = "UILabel"; text = "Registration"; ObjectID = "GhN-6g-QOp"; */
+"GhN-6g-QOp.text" = "Registration";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "IZD-yR-i6z"; */
+"IZD-yR-i6z.text" = "Name";
+
+/* Class = "UINavigationItem"; title = "New recipe"; ObjectID = "Ipv-VH-4Wo"; */
+"Ipv-VH-4Wo.title" = "New recipe";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "IuR-bo-6LB"; */
+"IuR-bo-6LB.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "KLP-Iw-N79"; */
+"KLP-Iw-N79.title" = "Back";
+
+/* Class = "UITextField"; placeholder = "Type(breakfast | lunch | dinner)"; ObjectID = "Kd6-tr-g4u"; */
+"Kd6-tr-g4u.placeholder" = "Type(breakfast | lunch | dinner)";
+
+/* Class = "UILabel"; text = "Recipe Name"; ObjectID = "KlE-2k-iTK"; */
+"KlE-2k-iTK.text" = "Recipe Name";
+
+/* Class = "UILabel"; text = "Level of difficulty: medium"; ObjectID = "LrM-QS-A4b"; */
+"LrM-QS-A4b.text" = "Level of difficulty: medium";
+
+/* Class = "UILabel"; text = "Level of difficulty: medium"; ObjectID = "Lv0-6V-0q9"; */
+"Lv0-6V-0q9.text" = "Level of difficulty: medium";
+
+/* Class = "UILabel"; text = "Ingredients"; ObjectID = "M0d-Id-Wm5"; */
+"M0d-Id-Wm5.text" = "Ingredients";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "NPd-0i-Vgm"; */
+"NPd-0i-Vgm.title" = "Back";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "NTM-bp-zs3"; */
+"NTM-bp-zs3.placeholder" = "Password";
+
+/* Class = "UIBarButtonItem"; title = "Log Out"; ObjectID = "OAN-RS-wYl"; */
+"OAN-RS-wYl.title" = "Log Out";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "PyE-58-2oF"; */
+"PyE-58-2oF.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "Methods"; ObjectID = "S2H-cT-cnF"; */
+"S2H-cT-cnF.text" = "Methods";
+
+/* Class = "UILabel"; text = "Ingredients"; ObjectID = "SGD-bF-UFQ"; */
+"SGD-bF-UFQ.text" = "Ingredients";
+
+/* Class = "UIButton"; normalTitle = "Don't have an account? Create one!"; ObjectID = "V6p-Jh-E6D"; */
+"V6p-Jh-E6D.normalTitle" = "Don't have an account? Create one!";
+
+/* Class = "UILabel"; text = "Level of difficulty:"; ObjectID = "VaR-iO-Bjf"; */
+"VaR-iO-Bjf.text" = "Level of difficulty:";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "VwR-hJ-Tl5"; */
+"VwR-hJ-Tl5.title" = "Back";
+
+/* Class = "UILabel"; text = "Time it takes:"; ObjectID = "WJ5-3e-QQs"; */
+"WJ5-3e-QQs.text" = "Time it takes:";
+
+/* Class = "UILabel"; text = "Time it takes: 15 mins"; ObjectID = "X0L-FY-TJb"; */
+"X0L-FY-TJb.text" = "Time it takes: 15 mins";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "cAU-UE-wEE"; */
+"cAU-UE-wEE.normalTitle" = "Save";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "cEr-IT-X3i"; */
+"cEr-IT-X3i.title" = "Save";
+
+/* Class = "UILabel"; text = "Level of difficulty:"; ObjectID = "cZn-bl-NWV"; */
+"cZn-bl-NWV.text" = "Level of difficulty:";
+
+/* Class = "UILabel"; text = "Steps"; ObjectID = "dAo-Lb-XbX"; */
+"dAo-Lb-XbX.text" = "Steps";
+
+/* Class = "UIButton"; normalTitle = "I have an account. Log In"; ObjectID = "dbn-td-Sua"; */
+"dbn-td-Sua.normalTitle" = "I have an account. Log In";
+
+/* Class = "UINavigationItem"; title = "Recipe Name"; ObjectID = "eFA-o4-Jz0"; */
+"eFA-o4-Jz0.title" = "Recipe Name";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "elg-2v-LWI"; */
+"elg-2v-LWI.title" = "Profile";
+
+/* Class = "UILabel"; text = "Time it takes: 15 mins"; ObjectID = "fKy-Tf-ffm"; */
+"fKy-Tf-ffm.text" = "Time it takes: 15 mins";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "h5k-oS-XSU"; */
+"h5k-oS-XSU.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "h7D-D9-s73"; */
+"h7D-D9-s73.title" = "Item";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "hFt-4S-gBZ"; */
+"hFt-4S-gBZ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Favourite Recipes"; ObjectID = "hnt-i0-six"; */
+"hnt-i0-six.text" = "Favourite Recipes";
+
+/* Class = "UITextField"; placeholder = "Surname"; ObjectID = "iJk-Pw-aTm"; */
+"iJk-Pw-aTm.placeholder" = "Surname";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "iae-5u-bao"; */
+"iae-5u-bao.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Recipe name"; ObjectID = "idZ-bw-kTa"; */
+"idZ-bw-kTa.text" = "Recipe name";
+
+/* Class = "UILabel"; text = "Methods"; ObjectID = "ja4-lx-8Xz"; */
+"ja4-lx-8Xz.text" = "Methods";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "kJW-KO-n9v"; */
+"kJW-KO-n9v.title" = "Back";
+
+/* Class = "UILabel"; text = "Ingredients"; ObjectID = "lVV-ny-kIN"; */
+"lVV-ny-kIN.text" = "Ingredients";
+
+/* Class = "UILabel"; text = "Methods:"; ObjectID = "m2n-AB-QVW"; */
+"m2n-AB-QVW.text" = "Methods:";
+
+/* Class = "UILabel"; text = "Name Surname"; ObjectID = "nGb-0O-ILM"; */
+"nGb-0O-ILM.text" = "Name Surname";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "nf3-fo-hpQ"; */
+"nf3-fo-hpQ.title" = "Back";
+
+/* Class = "UITextField"; placeholder = "Time it takes"; ObjectID = "nhD-6n-6bE"; */
+"nhD-6n-6bE.placeholder" = "Time it takes";
+
+/* Class = "UIButton"; normalTitle = "ENG"; ObjectID = "q5H-lh-Zgc"; */
+"q5H-lh-Zgc.normalTitle" = "ENG";
+
+/* Class = "UILabel"; text = "Ingredients:"; ObjectID = "q6t-Fa-qc3"; */
+"q6t-Fa-qc3.text" = "Ingredients:";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "qd6-p9-Cef"; */
+"qd6-p9-Cef.placeholder" = "Name";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "qtf-CY-niQ"; */
+"qtf-CY-niQ.title" = "Settings";
+
+/* Class = "UITextField"; placeholder = "Enter new surname"; ObjectID = "rtC-8a-C8M"; */
+"rtC-8a-C8M.placeholder" = "Enter new surname";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "sVQ-be-mTm"; */
+"sVQ-be-mTm.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "Level of difficulty: medium"; ObjectID = "t60-cc-U8M"; */
+"t60-cc-U8M.text" = "Level of difficulty: medium";
+
+/* Class = "UILabel"; text = "Level of difficulty:"; ObjectID = "toB-BK-jxO"; */
+"toB-BK-jxO.text" = "Level of difficulty:";
+
+/* Class = "UILabel"; text = "Time it takes: 15 mins"; ObjectID = "tui-xh-zo2"; */
+"tui-xh-zo2.text" = "Time it takes: 15 mins";
+
+/* Class = "UILabel"; text = "Recipe Name"; ObjectID = "u2l-IB-ltx"; */
+"u2l-IB-ltx.text" = "Recipe Name";
+
+/* Class = "UISegmentedControl"; uvv-lL-J6K.segmentTitles[0] = "Breakfast"; ObjectID = "uvv-lL-J6K"; */
+"uvv-lL-J6K.segmentTitles[0]" = "Breakfast";
+
+/* Class = "UISegmentedControl"; uvv-lL-J6K.segmentTitles[1] = "Lunch"; ObjectID = "uvv-lL-J6K"; */
+"uvv-lL-J6K.segmentTitles[1]" = "Lunch";
+
+/* Class = "UISegmentedControl"; uvv-lL-J6K.segmentTitles[2] = "Dinner"; ObjectID = "uvv-lL-J6K"; */
+"uvv-lL-J6K.segmentTitles[2]" = "Dinner";
+
+/* Class = "UILabel"; text = "Time it takes"; ObjectID = "vue-fW-VM7"; */
+"vue-fW-VM7.text" = "Time it takes";
+
+/* Class = "UITextField"; placeholder = "Time it takes"; ObjectID = "w7d-ZH-9iL"; */
+"w7d-ZH-9iL.placeholder" = "Time it takes";
+
+/* Class = "UIButton"; normalTitle = "RUS"; ObjectID = "w98-7L-qZC"; */
+"w98-7L-qZC.normalTitle" = "RUS";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "wxd-BA-nlD"; */
+"wxd-BA-nlD.normalTitle" = "+";
+
+/* Class = "UITextField"; placeholder = "Enter new name"; ObjectID = "x1P-IS-uKF"; */
+"x1P-IS-uKF.placeholder" = "Enter new name";
+
+/* Class = "UILabel"; text = "Choose your language"; ObjectID = "xKM-yA-OhW"; */
+"xKM-yA-OhW.text" = "Choose your language";
+
+/* Class = "UILabel"; text = "Methods"; ObjectID = "xtc-e5-4VO"; */
+"xtc-e5-4VO.text" = "Methods";
+
+/* Class = "UILabel"; text = "Hi! Here you can edit your profile"; ObjectID = "yNR-Wr-ejk"; */
+"yNR-Wr-ejk.text" = "Hi! Here you can edit your profile";
+
+/* Class = "UILabel"; text = "Ingredients"; ObjectID = "yeY-l2-9Y0"; */
+"yeY-l2-9Y0.text" = "Ingredients";
