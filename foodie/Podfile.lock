@@ -73,6 +73,7 @@ PODS:
   - GoogleUtilities/UserDefaults (7.3.1):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - LanguageManager-iOS (1.2.5)
   - leveldb-library (1.22.1)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -87,6 +88,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseAuth
   - FirebaseDatabase
+  - LanguageManager-iOS
   - RAMAnimatedTabBarController
 
 SPEC REPOS:
@@ -103,6 +105,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - LanguageManager-iOS
     - leveldb-library
     - nanopb
     - PromisesObjC
@@ -121,11 +124,12 @@ SPEC CHECKSUMS:
   GoogleDataTransport: cd9db2180fcecd8da1b561aea31e3e56cf834aa7
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  LanguageManager-iOS: 049345fe4d1c5fbe22af93d438540917f4936359
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   RAMAnimatedTabBarController: 6863a386e7ae2ab227cd60aa73ab8ff56cdacfdd
 
-PODFILE CHECKSUM: c2e0ecc0d87a76a3fb80d260cd8b86bee2721193
+PODFILE CHECKSUM: 84ac47f361c3405cdc58b65bda28c431a755aa82
 
 COCOAPODS: 1.10.1
