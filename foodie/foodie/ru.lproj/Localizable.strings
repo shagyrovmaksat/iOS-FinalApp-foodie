@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  foodie
+
+  Created by Shagirov Maksat on 14.05.2021.
+  
+*/
+
+"Log Out" = "Выйти";
+"Profile" = "Профиль";
+"My recipes" = "Мои рецепты";
+"Back" = "Назад";
+"Settings" = "Настройки";
+"Hi! Here you can edit your profile" = "Хей! Здесь ты можешь изменить свой профиль";
+"Enter new data:" = "Введите новые данные:";
+"Enter new name" = "Введите новое имя";
+"Enter new surname" = "Введите новую фамилию";
+"Save" = "Сохранить";
+"New recipe" = "Новый рецепт";
+"Name" = "Название";
+"Time it takes" = "Время приготовления";
+"Level of difficulty:" = "Уровень сложности:";
+"Ingredients" = "Ингридиенты";
+"Methods" = "Способ приготовления";
+"easy" = "легкий";
+"medium" = "средний";
+"hard" = "сложный";
+"Edit" = "Редактировать";
+"Hi! Here you can edit your recipe" = "Хей! Здесь ты можешь изменить рецепт";
+"Recipes" = "Рецепты";
+"Breakfast" = "Завтрак";
+"Lunch" = "Обед";
+"Dinner" = "Ужин";
+"Recipe" = "Рецепт";
+"Favourite Recipes" = "Любимые рецепты";

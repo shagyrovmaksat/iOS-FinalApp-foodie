@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class SettingsViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class SettingsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+
     /*
     // MARK: - Navigation
 
