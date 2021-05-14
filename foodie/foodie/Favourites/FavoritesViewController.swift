@@ -22,7 +22,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: from recipe to detail
         currentUser = Auth.auth().currentUser
         myTableView.separatorStyle = .none
         myTableView.rowHeight = 350
@@ -43,7 +42,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recipes.count
     }
@@ -86,7 +85,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func removeFromFavs(_ sender: UIButton) {
-        
         let buttonPos = sender.convert(CGPoint.zero, to: self.myTableView)
         let indexPath = self.myTableView.indexPathForRow(at: buttonPos)
         
@@ -94,6 +92,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             self.myTableView.cellForRow(at: indexPath!)?.contentView.frame.origin.x = (self.myTableView.cellForRow(at: indexPath!)?.contentView.frame.width)!
             self.myTableView.cellForRow(at: indexPath!)?.contentView.alpha = 0
         } completion: { [self] (Bool) in
+            self.myTableView.cellForRow(at: indexPath!)?.contentView.frame.origin.x = 0
+            self.myTableView.cellForRow(at: indexPath!)?.contentView.alpha = 1
             let usersRef = Database.database().reference().child("users").child(currentUser!.uid).child("favoriteRecipes")
             let queryRef = usersRef.queryOrdered(byChild: "name").queryEqual(toValue: self.recipes[indexPath!.row].name)
             queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
