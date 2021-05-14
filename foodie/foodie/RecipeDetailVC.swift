@@ -22,15 +22,17 @@ class RecipeDetailVC: UIViewController {
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var methodsTV: UITextView!
     @IBOutlet weak var ingredientsTV: UITextView!
-    @IBOutlet weak var viewWithCorner: UIView!
     
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var viewWithCorner1: UIView!
+    @IBOutlet weak var viewWithCorner2: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewWithCorner.layer.cornerRadius = 5
-        viewWithCorner.layer.borderWidth = 3
-        viewWithCorner.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
+        
+        viewWithCorner1.myCorner()
+        viewWithCorner2.myCorner()
+        
         navBar.barTintColor = UIColor(named: "darkGreen")
         navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         recipeImage.image = image
@@ -45,5 +47,13 @@ class RecipeDetailVC: UIViewController {
     
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension UIView {
+    func myCorner() {
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 3
+        self.layer.borderColor = UIColor(named: "lightGreen")?.cgColor
     }
 }
