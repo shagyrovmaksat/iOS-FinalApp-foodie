@@ -17,4 +17,15 @@ class SettingsViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func changeToEng(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .en)
+    }
+    
+    @IBAction func changeToRus(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ru)
+    }
+    @IBAction func changeToKaz(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ko)
+    }
 }

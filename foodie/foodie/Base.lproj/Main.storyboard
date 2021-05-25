@@ -951,6 +951,9 @@
                                         <state key="normal" title="ENG">
                                             <color key="titleColor" name="darkGreen"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeToEng:" destination="3UN-7v-pYW" eventType="touchUpInside" id="Zn4-Lg-ZFU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w98-7L-qZC">
                                         <rect key="frame" x="131.33333333333334" y="0.0" width="111.33333333333334" height="30"/>
@@ -958,6 +961,9 @@
                                         <state key="normal" title="RUS">
                                             <color key="titleColor" name="darkGreen"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeToRus:" destination="3UN-7v-pYW" eventType="touchUpInside" id="Zkj-Tf-zXe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RH-Be-gnl">
                                         <rect key="frame" x="262.66666666666669" y="0.0" width="111.33333333333331" height="30"/>
@@ -965,6 +971,9 @@
                                         <state key="normal" title="KAZ">
                                             <color key="titleColor" name="darkGreen"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeToKaz:" destination="3UN-7v-pYW" eventType="touchUpInside" id="g0v-4m-cFu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
