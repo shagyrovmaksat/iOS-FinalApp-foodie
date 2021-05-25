@@ -11,10 +11,11 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 
-class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     private let storage = Storage.storage().reference()
     let ref = Database.database().reference()
@@ -25,11 +26,14 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     var state = "breakfast"
     var curIdx = 0
     var currentUser: User?
+    var searchingRecipes: [Recipe] = []
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: check if is fav and change image
         // TODO: from recipe to detail
+        searchBar.delegate = self
         currentUser = Auth.auth().currentUser
         myTableView.separatorStyle = .none
         myTableView.rowHeight = 350
@@ -54,6 +58,21 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            searchingRecipes.removeAll()
+            for recipe in showRecipes {
+                print(searchText.lowercased())
+                if recipe.ingredients!.lowercased().range(of: searchText.lowercased()) != nil{
+                    searchingRecipes.append(recipe)
+                }
+            }
+            isSearching = true
+            if searchText == "" {
+                isSearching = false;
+            }
+            myTableView.reloadData()
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         myTableView.reloadData()
@@ -126,6 +145,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func prepareRecipes() {
         showRecipes.removeAll()
+        searchingRecipes.removeAll()
         for recipe in recipes {
             if(recipe.type == state) {
                 showRecipes.append(recipe)
@@ -136,28 +156,47 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        showRecipes.count
+        if isSearching{
+            return searchingRecipes.count
+        }
+        return showRecipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? RecipesCustomCell
         
-        cell?.name.text = showRecipes[indexPath.row].name
-        cell?.time.text = "Time it takes: " + showRecipes[indexPath.row].time!
-        cell?.difficulty.text = "Level of difficulty: " + showRecipes[indexPath.row].difficulty!
-        cell?.recipeImage.image = showRecipes[indexPath.row].image
-        
-        var isFav = false
-        for recipe in favRecipes{
-            if recipe.name == showRecipes[indexPath.row].name{
-                isFav = true
+        if isSearching{
+            cell?.name.text = searchingRecipes[indexPath.row].name
+            cell?.time.text = "Time it takes: " + searchingRecipes[indexPath.row].time!
+            cell?.difficulty.text = "Level of difficulty: " + searchingRecipes[indexPath.row].difficulty!
+            cell?.recipeImage.image = searchingRecipes[indexPath.row].image
+            
+            var isFav = false
+            for recipe in favRecipes{
+                if recipe.name == searchingRecipes[indexPath.row].name{
+                    isFav = true
+                }
             }
+            if isFav{ cell?.icon.setImage(UIImage.init(named: "isFav"), for: .normal) }
+            else{ cell?.icon.setImage(UIImage.init(named: "notFav"), for: .normal) }
+            isFav = false
         }
-//        print(isFav)
-        if isFav{ cell?.icon.setImage(UIImage.init(named: "isFav"), for: .normal) }
-        else{ cell?.icon.setImage(UIImage.init(named: "notFav"), for: .normal) }
-        isFav = false
-        
+        else{
+            cell?.name.text = showRecipes[indexPath.row].name
+            cell?.time.text = "Time it takes: " + showRecipes[indexPath.row].time!
+            cell?.difficulty.text = "Level of difficulty: " + showRecipes[indexPath.row].difficulty!
+            cell?.recipeImage.image = showRecipes[indexPath.row].image
+            
+            var isFav = false
+            for recipe in favRecipes{
+                if recipe.name == showRecipes[indexPath.row].name{
+                    isFav = true
+                }
+            }
+            if isFav{ cell?.icon.setImage(UIImage.init(named: "isFav"), for: .normal) }
+            else{ cell?.icon.setImage(UIImage.init(named: "notFav"), for: .normal) }
+            isFav = false
+        }
         cell?.contentView.layer.borderWidth = 2.0
         cell?.contentView.layer.borderColor = UIColor(named: "darkGreen")?.cgColor
         cell?.contentView.layer.cornerRadius = 10

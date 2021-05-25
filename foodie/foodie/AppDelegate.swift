@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         return true
     }
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    }
 
     // MARK: UISceneSession Lifecycle
 

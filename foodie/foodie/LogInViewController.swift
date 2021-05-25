@@ -18,7 +18,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     var currentUser : User?
-    
+    var isLaunched = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.logInButton.layer.cornerRadius = 5
@@ -27,9 +27,13 @@ class LogInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         currentUser = Auth.auth().currentUser
+//        if Manager.shared.isFirstLaunch {
+//            performSegue(withIdentifier: "toOnboarding", sender: nil)
+//            Manager.shared.isFirstLaunch = true
+//        }
         if currentUser != nil && currentUser!.isEmailVerified {
             goToMain()
-        }
+        } 
     }
     
     @IBAction func logInPressed(_ sender: Any) {
@@ -60,10 +64,16 @@ class LogInViewController: UIViewController {
         present(mainPage, animated: true)
     }
     
+    
     func showMessage(title : String, message : String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in }
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
+}
+
+extension UIStoryboard {
+    static let onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
+    static let main = UIStoryboard(name: "Main", bundle: nil)
 }

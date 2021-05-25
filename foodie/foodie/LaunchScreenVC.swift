@@ -58,7 +58,7 @@ class LaunchScreenVC: UIViewController {
             if done {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                    if let mainPage = storyboard.instantiateViewController(identifier: "LogInViewController") as? UIViewController {
+                    if let mainPage = storyboard.instantiateViewController(identifier: "IntroVC") as? UIViewController {
                         self.present(mainPage, animated: true, completion: nil)
                     }
                 })

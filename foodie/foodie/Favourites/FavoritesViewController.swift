@@ -42,6 +42,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recipes.count
@@ -64,6 +65,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return cell!
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myTableView.deselectRow(at: indexPath, animated: true)

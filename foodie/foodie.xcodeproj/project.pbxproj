@@ -36,6 +36,7 @@
 		E549139926442E360071D2D8 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E549139826442E360071D2D8 /* TabbarVC.swift */; };
 		E555E7792645315C000C6C54 /* AddRecipeTempVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555E7782645315C000C6C54 /* AddRecipeTempVC.swift */; };
 		E5B4FB582632B554008E55A5 /* ProfileRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */; };
+		E5E4DCA5265D29E800FBBEA8 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E4DCA4265D29E800FBBEA8 /* IntroVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		E555E7C8264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		E555E7C9264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRecipeCell.swift; sourceTree = "<group>"; };
+		E5E4DCA4265D29E800FBBEA8 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		FB0CAA0CE66875721BF8C2A9 /* Pods-foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.debug.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 				E555E7782645315C000C6C54 /* AddRecipeTempVC.swift */,
 				639708DE264E50670023432C /* Localizable.strings */,
 				639708E0264E53270023432C /* SettingsViewController.swift */,
+				E5E4DCA4265D29E800FBBEA8 /* IntroVC.swift */,
 			);
 			path = foodie;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				E5B4FB582632B554008E55A5 /* ProfileRecipeCell.swift in Sources */,
 				E52818FD2636F5E000D935D6 /* LaunchScreenVC.swift in Sources */,
 				63FB258E262F5D5A00366C9E /* RecipesViewController.swift in Sources */,
+				E5E4DCA5265D29E800FBBEA8 /* IntroVC.swift in Sources */,
 				6375E171264048C500F7967D /* DetailRecipeViewController.swift in Sources */,
 				E5217D712641175A006E32DA /* AddRecipeVC.swift in Sources */,
 				637ED8DE262F26B80060562F /* SceneDelegate.swift in Sources */,

@@ -26,7 +26,10 @@ class RegisterViewController: UIViewController {
     
 
     @IBAction func goToLogin(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let mainPage = storyboard.instantiateViewController(identifier: "LogInViewController") as? UIViewController {
+            self.present(mainPage, animated: true, completion: nil)
+        }
     }
     
     @IBAction func createAccount(_ sender: UIButton) {
