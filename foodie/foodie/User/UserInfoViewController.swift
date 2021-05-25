@@ -19,9 +19,9 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var profileImage: UIButton!
     @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var addButton: UIButton!
-
+    @IBOutlet weak var emailLabel: UILabel!
+    
     var myRecipes: [NSManagedObject] = []
     static var myFavRecipes: [Recipe] = []
     var currentUser: User?
@@ -32,8 +32,6 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.barTintColor = UIColor(named: "darkGreen")
-        navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         indicator.startAnimating()
         indicator.isHidden = false
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -87,8 +85,12 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             }
         })
         task.resume()
-        self.navBar.topItem?.title = currentUser?.email
+        self.emailLabel.text = currentUser?.email
         self.myImageView.makeRounded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
     }
     
     @IBAction func photoPicker(_ sender: UIButton) {

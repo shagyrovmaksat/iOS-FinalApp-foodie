@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  foodie
-
-  Created by Shagirov Maksat on 14.05.2021.
-  
-*/
-
 "Log Out" = "Log Out";
 "Profile" = "Profile";
 "My recipes" = "My recipes";
@@ -18,6 +10,7 @@
 "Save" = "Save";
 "New recipe" = "New recipe";
 "Name" = "Name";
+"Recipe Name" = "Recipe Name";
 "Time it takes" = "Time it takes";
 "Level of difficulty:" = "Level of difficulty:";
 "Ingredients" = "Ingredients";
@@ -33,3 +26,4 @@
 "Dinner" = "Dinner";
 "Recipe" = "Recipe";
 "Favourite Recipes" = "Favourite Recipes";
+"Choose your language" = "Choose your language";

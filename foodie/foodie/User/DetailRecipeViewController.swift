@@ -19,18 +19,16 @@ class DetailRecipeViewController: UIViewController, Editable {
     var delegateForChange: Changeable?
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var methodsTextView: UITextView!
-
+    @IBOutlet weak var recipeName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.barTintColor = UIColor(named: "darkGreen")
-        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         imageView.image = image
-        navigationBar.topItem?.title = name
+        recipeName.text = name
         timeLabel.text = "Time it takes: " + time!
         difficultyLabel.text = "Level of difficulty: " + difficulty!
         ingredientsTextView.text = ingredients
@@ -66,7 +64,7 @@ class DetailRecipeViewController: UIViewController, Editable {
     
     func editRecipe(_ image: UIImage, _ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
         self.name = oldName
-        navigationBar.topItem?.title = name
+        recipeName.text = name
         timeLabel.text = "Time it takes: " + time
         difficultyLabel.text = "Level of difficulty: " + difficulty
         ingredientsTextView.text = ingredients

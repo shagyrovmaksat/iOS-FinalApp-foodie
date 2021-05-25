@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import RAMAnimatedTabBarController
+import LanguageManager_iOS
 
 class LogInViewController: UIViewController {
 
@@ -65,5 +66,17 @@ class LogInViewController: UIViewController {
         let ok = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in }
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func changeToEng(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .en)
+    }
+    
+    @IBAction func changeToRus(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ru)
+    }
+    
+    @IBAction func changeToKaz(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ko)
     }
 }

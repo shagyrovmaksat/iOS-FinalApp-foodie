@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import LanguageManager_iOS
 
 class RegisterViewController: UIViewController {
 
@@ -75,5 +76,17 @@ class RegisterViewController: UIViewController {
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func changeToEng(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .en)
+    }
+    
+    @IBAction func changeToRus(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ru)
+    }
+    
+    @IBAction func changeToKaz(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ko)
     }
 }

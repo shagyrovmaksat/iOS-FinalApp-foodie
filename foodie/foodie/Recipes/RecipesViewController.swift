@@ -55,8 +55,9 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         myTableView.reloadData()
+        self.viewDidLoad()
     }
     
     func getFavourites(){

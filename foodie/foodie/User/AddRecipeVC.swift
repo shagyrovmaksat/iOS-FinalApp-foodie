@@ -23,8 +23,6 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var pickerData = ["easy", "medium", "hard"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.barTintColor = UIColor(named: "darkGreen")
-        navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         // Connect data:
         self.levelPicker.delegate = self
         self.levelPicker.dataSource = self
