@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  foodie
-
-  Created by Shagirov Maksat on 14.05.2021.
-  
-*/
-
 "Log Out" = "Выйти";
 "Profile" = "Профиль";
 "My recipes" = "Мои рецепты";
@@ -17,7 +9,8 @@
 "Enter new surname" = "Введите новую фамилию";
 "Save" = "Сохранить";
 "New recipe" = "Новый рецепт";
-"Name" = "Название";
+"Name" = "Имя";
+"Recipe Name" = "Название";
 "Time it takes" = "Время приготовления";
 "Level of difficulty:" = "Уровень сложности:";
 "Ingredients" = "Ингридиенты";
@@ -33,3 +26,4 @@
 "Dinner" = "Ужин";
 "Recipe" = "Рецепт";
 "Favourite Recipes" = "Любимые рецепты";
+"Choose your language" = "Выберите свой язык";

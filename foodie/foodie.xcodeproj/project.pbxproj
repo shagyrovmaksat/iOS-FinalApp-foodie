@@ -42,6 +42,8 @@
 /* Begin PBXFileReference section */
 		6317C0592641757300DA0A9F /* ModelForMyRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelForMyRecipe.xcdatamodel; sourceTree = "<group>"; };
 		63181ACD264C1239007E189A /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
+		63197FF1265D71B4000F5FB1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63197FF2265D71D3000F5FB1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		633AC06A262F4250007632D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		635A377326442A01009F0A3E /* Changeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changeable.swift; sourceTree = "<group>"; };
 		6375E170264048C500F7967D /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 		637ED8F4262F27160060562F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		63901C7C26429241004C415C /* Addable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addable.swift; sourceTree = "<group>"; };
 		639708DD264E50670023432C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		639708DF264E518E0023432C /* kk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kk; path = kk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		639708E0264E53270023432C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		63BC29202646ABD300878D69 /* RecipesCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCustomCell.swift; sourceTree = "<group>"; };
 		63C154262631BCF900FEE90D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -72,9 +73,6 @@
 		E52A463E263ADC45004F0B49 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		E549139826442E360071D2D8 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		E555E7782645315C000C6C54 /* AddRecipeTempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeTempVC.swift; sourceTree = "<group>"; };
-		E555E7C7264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		E555E7C8264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		E555E7C9264E5753000C6C54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E5B4FB572632B554008E55A5 /* ProfileRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRecipeCell.swift; sourceTree = "<group>"; };
 		E5E4DCA4265D29E800FBBEA8 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		FB0CAA0CE66875721BF8C2A9 /* Pods-foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodie.debug.xcconfig"; path = "Target Support Files/Pods-foodie/Pods-foodie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -247,8 +245,8 @@
 			knownRegions = (
 				en,
 				Base,
-				kk,
 				ru,
+				ko,
 			);
 			mainGroup = 637ED8CF262F26B80060562F;
 			productRefGroup = 637ED8D9262F26B80060562F /* Products */;
@@ -356,7 +354,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				637ED8E2262F26B80060562F /* Base */,
-				E555E7C8264E5753000C6C54 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -365,7 +362,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				637ED8E7262F26B90060562F /* Base */,
-				E555E7C7264E5753000C6C54 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -374,8 +370,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				639708DD264E50670023432C /* en */,
-				639708DF264E518E0023432C /* kk */,
-				E555E7C9264E5753000C6C54 /* ru */,
+				63197FF1265D71B4000F5FB1 /* ru */,
+				63197FF2265D71D3000F5FB1 /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

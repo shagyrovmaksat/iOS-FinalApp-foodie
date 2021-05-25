@@ -12,8 +12,6 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
 
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var levelPicker: UIPickerView!
-    
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var nameTextInput: UITextField!
     @IBOutlet weak var timeTextInput: UITextField!
     @IBOutlet weak var ingredientsTextView: UITextView!
@@ -23,8 +21,6 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var pickerData = ["easy", "medium", "hard"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.barTintColor = UIColor(named: "darkGreen")
-        navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         // Connect data:
         self.levelPicker.delegate = self
         self.levelPicker.dataSource = self
@@ -57,12 +53,12 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         vc.allowsEditing = true
         present(vc, animated: true)
     }
-    
+
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func savePressed(_ sender: Any) {
+    @IBAction func save(_ sender: Any) {
         if nameTextInput.text!.removeWhitespace() == "" || timeTextInput.text!.removeWhitespace() == "" || ingredientsTextView.text!.removeWhitespace() == "" || methodsTextView.text!.removeWhitespace() == "" {
             showMessage(title: "Warning", message: "Please fill in all the fields")
         } else {

@@ -19,7 +19,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var nameSurname: UILabel!
     @IBOutlet weak var profileImage: UIButton!
     @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
 
     var myRecipes: [NSManagedObject] = []
@@ -32,8 +32,6 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.barTintColor = UIColor(named: "darkGreen")
-        navBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         indicator.startAnimating()
         indicator.isHidden = false
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -87,7 +85,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
             }
         })
         task.resume()
-        self.navBar.topItem?.title = currentUser?.email
+        emailLabel.text = currentUser?.email
         self.myImageView.makeRounded()
     }
     
@@ -150,7 +148,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
         return swipeActions
     }
-    
+
     @IBAction func logOutPressed(_ sender: Any) {
         do {
             try Auth.auth().signOut()
