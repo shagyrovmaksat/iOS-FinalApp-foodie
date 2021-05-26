@@ -11,6 +11,7 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 import CoreData
+import LanguageManager_iOS
 
 class UserInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Editable, Addable, Changeable {
 
@@ -21,7 +22,11 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
-
+    
+    
+    @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var myRecipesLabel: UILabel!
+    
     var myRecipes: [NSManagedObject] = []
     static var myFavRecipes: [Recipe] = []
     var currentUser: User?
@@ -87,6 +92,15 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         task.resume()
         emailLabel.text = currentUser?.email
         self.myImageView.makeRounded()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
+    }
+    
+    func updateLanguage(_ language: String) {
+        logOutButton.setTitle("Log Out".addLocalizableString(str: language), for: .normal)
+        myRecipesLabel.text = "My recipes".addLocalizableString(str: language)
     }
     
     @IBAction func photoPicker(_ sender: UIButton) {

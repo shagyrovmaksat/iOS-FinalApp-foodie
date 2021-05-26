@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import RAMAnimatedTabBarController
+import LanguageManager_iOS
 
 class LogInViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var createButton: UIButton!
     
     var currentUser : User?
     var isLaunched = false
@@ -27,10 +31,6 @@ class LogInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         currentUser = Auth.auth().currentUser
-//        if Manager.shared.isFirstLaunch {
-//            performSegue(withIdentifier: "toOnboarding", sender: nil)
-//            Manager.shared.isFirstLaunch = true
-//        }
         if currentUser != nil && currentUser!.isEmailVerified {
             goToMain()
         } 
@@ -70,6 +70,29 @@ class LogInViewController: UIViewController {
         let ok = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in }
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func changeToEng(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .en)
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
+    }
+    
+    @IBAction func changeToRus(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ru)
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
+    }
+    
+    @IBAction func changeToKaz(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ko)
+        updateLanguage("ko")
+    }
+    
+    func updateLanguage(_ language: String) {
+        createButton.setTitle("Don't have an account? Create one!".addLocalizableString(str: language), for: .normal)
+        logInButton.setTitle("Log In".addLocalizableString(str: language), for: .normal)
+        label1.text = "Log In".addLocalizableString(str: language)
+        emailTextField.placeholder = "Email".addLocalizableString(str: language)
+        passwordTextField.placeholder = "Password".addLocalizableString(str: language)
     }
 }
 

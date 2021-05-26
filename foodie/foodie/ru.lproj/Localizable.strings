@@ -1,3 +1,12 @@
+"Log In" = "Войти";
+"Email" = "Электронная почта";
+"Password" = "Пароль";
+"Don't have an account? Create one!" = "Нет учетной записи? Создай!";
+"Name" = "Имя";
+"Surname" = "Фамилия";
+"Create an account" = "Создать аккаунт";
+"Already have an account? Log In" = "У вас уже есть акаунт? Зайти";
+"Registration" = "Регистрация";
 "Log Out" = "Выйти";
 "Profile" = "Профиль";
 "My recipes" = "Мои рецепты";
@@ -10,7 +19,7 @@
 "Save" = "Сохранить";
 "New recipe" = "Новый рецепт";
 "Name" = "Имя";
-"Recipe Name" = "Название";
+"Recipe name" = "Название";
 "Time it takes" = "Время приготовления";
 "Level of difficulty:" = "Уровень сложности:";
 "Ingredients" = "Ингридиенты";
@@ -18,7 +27,7 @@
 "easy" = "легкий";
 "medium" = "средний";
 "hard" = "сложный";
-"Edit" = "Редактировать";
+"Edit" = "Изменить";
 "Hi! Here you can edit your recipe" = "Хей! Здесь ты можешь изменить рецепт";
 "Recipes" = "Рецепты";
 "Breakfast" = "Завтрак";
@@ -27,3 +36,5 @@
 "Recipe" = "Рецепт";
 "Favourite Recipes" = "Любимые рецепты";
 "Choose your language" = "Выберите свой язык";
+"Hey! What's in your fridge?" = "Привет! Что у тебя в холодильнике?";
+"Type the ingredients and we'll show you recipes with them." = "Введите ингредиенты, и мы покажем вам рецепты с ними.";

@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import LanguageManager_iOS
 
 class RegisterViewController: UIViewController {
 
@@ -17,11 +18,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var surnameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var registrationButton: UIButton!
+    @IBOutlet weak var registrationLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registrationButton.layer.cornerRadius = 5
+        indicator.isHidden = true
     }
     
 
@@ -78,5 +83,30 @@ class RegisterViewController: UIViewController {
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func changeToEng(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .en)
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
+    }
+    
+    @IBAction func changeToRus(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ru)
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
+    }
+    
+    @IBAction func changeToKaz(_ sender: Any) {
+        LanguageManager.shared.setLanguage(language: .ko)
+        updateLanguage("ko")
+    }
+    
+    func updateLanguage(_ language: String) {
+        emailField.placeholder = "Email".addLocalizableString(str: language)
+        nameField.placeholder = "Name".addLocalizableString(str: language)
+        surnameField.placeholder = "Surname".addLocalizableString(str: language)
+        passwordField.placeholder = "Password".addLocalizableString(str: language)
+        registrationLabel.text = "Registration".addLocalizableString(str: language)
+        createButton.setTitle("Create an account".addLocalizableString(str: language), for: .normal)
+        logInButton.setTitle("Already have an account? Log In".addLocalizableString(str: language), for: .normal)
     }
 }

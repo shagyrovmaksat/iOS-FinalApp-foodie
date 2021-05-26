@@ -10,9 +10,11 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
+import LanguageManager_iOS
 
 class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
+    @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var myTableView: UITableView!
     private let storage = Storage.storage().reference()
     let ref = Database.database().reference()
@@ -43,6 +45,13 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
+    }
+    
+    func updateLanguage(_ language: String) {
+        label1.text = "Favourite Recipes".addLocalizableString(str: language)
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recipes.count

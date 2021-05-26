@@ -10,12 +10,17 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
+import LanguageManager_iOS
 
 class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var recipesLabel: UILabel!
+    
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
     
     private let storage = Storage.storage().reference()
     let ref = Database.database().reference()
@@ -76,6 +81,16 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         myTableView.reloadData()
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
+    }
+    
+    func updateLanguage(_ language: String) {
+        segmentedControl.setTitle("Breakfast".addLocalizableString(str: language), forSegmentAt: 0)
+        segmentedControl.setTitle("Lunch".addLocalizableString(str: language), forSegmentAt: 1)
+        segmentedControl.setTitle("Dinner".addLocalizableString(str: language), forSegmentAt: 2)
+        recipesLabel.text = "Recipes".addLocalizableString(str: language)
+        label1.text = "Hey! What's in your fridge?".addLocalizableString(str: language)
+        label2.text = "Type the ingredients and we'll show you recipes with them.".addLocalizableString(str: language)
     }
     
     func getFavourites(){

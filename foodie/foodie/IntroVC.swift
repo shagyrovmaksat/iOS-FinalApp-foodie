@@ -66,7 +66,7 @@ class IntroVC: UIViewController, UIScrollViewDelegate {
 
             let txt2 = UILabel.init(frame: CGRect(x:32,y:txt1.frame.maxY+10,width:scrollWidth-64,height:50))
             txt2.textAlignment = .center
-            txt2.numberOfLines = 3
+            txt2.numberOfLines = 7
             txt2.font = UIFont.systemFont(ofSize: 18.0)
             txt2.text = descs[index]
 

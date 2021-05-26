@@ -10,7 +10,7 @@
 "Save" = "Сақтау";
 "New recipe" = "Жаңа рецепт";
 "Name" = "Атыңыз";
-"Recipe Name" = "Атауы";
+"Recipe name" = "Атауы";
 "Time it takes" = "Алатың уақыты";
 "Level of difficulty:" = "Қиындық деңгейі:";
 "Ingredients" = "Құрамы";
@@ -27,3 +27,14 @@
 "Recipe" = "Рецепт";
 "Favourite Recipes" = "Сүйікті рецептер";
 "Choose your language" = "Өз тіліңізді таңдаңыз";
+"Hey! What's in your fridge?" = "Хей! Сіздің тоңазытқышыңызда не бар?";
+"Type the ingredients and we'll show you recipes with them." = "Ингредиенттеріңізді енгізіңіз, біз олармен бірге сізге рецепттер табамыз";
+"Log In" = "Кіру";
+"Email" = "Электрондық пошта";
+"Password" = "Пароль";
+"Don't have an account? Create one!" = "Бұрын тіркелмегенсіз бе? Қазір тіркеліңіз!";
+"Name" = "Атыңыз";
+"Surname" = "Тегіңіз";
+"Create an account" = "Тіркелу";
+"Already have an account? Log In" = "Сіз бұрын тіркелдіңіз бе? Кіру";
+"Registration" = "Тіркелу";

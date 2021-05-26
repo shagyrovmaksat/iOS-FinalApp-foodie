@@ -10,7 +10,7 @@
 "Save" = "Save";
 "New recipe" = "New recipe";
 "Name" = "Name";
-"Recipe Name" = "Recipe Name";
+"Recipe name" = "Recipe name";
 "Time it takes" = "Time it takes";
 "Level of difficulty:" = "Level of difficulty:";
 "Ingredients" = "Ingredients";
@@ -27,3 +27,14 @@
 "Recipe" = "Recipe";
 "Favourite Recipes" = "Favourite Recipes";
 "Choose your language" = "Choose your language";
+"Hey! What's in your fridge?" = "Hey! What's in your fridge?";
+"Type the ingredients and we'll show you recipes with them." = "Type the ingredients and we'll show you recipes with them.";
+"Log In" = "Log In";
+"Email" = "Email";
+"Password" = "Password";
+"Don't have an account? Create one!" = "Don't have an account? Create one!";
+"Name" = "Name";
+"Surname" = "Surname";
+"Create an account" = "Create an account";
+"I have an account. Log In" = "I have an account. Log In";
+"Registration" = "Registration";
