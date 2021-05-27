@@ -10,23 +10,64 @@ import Firebase
 import FirebaseAuth
 import RAMAnimatedTabBarController
 import LanguageManager_iOS
+import TransitionButton
 
 class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var logInButton: UIButton!
+//    @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var createButton: UIButton!
     
+    let button = TransitionButton(frame: CGRect(x: 0, y: 0, width: 250, height: 52))
     var currentUser : User?
     var isLaunched = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.logInButton.layer.cornerRadius = 5
+        
+        button.backgroundColor = UIColor(named: "darkGreen")
+        button.layer.cornerRadius = 20
+        button.setTitle("Log In", for: .normal)
+        button.tintColor = UIColor(named: "lightGreen")
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.center.x = view.center.x
+        button.center.y = view.center.y + 200
+        view.addSubview(button)
+        
+        button.spinnerColor = UIColor(named: "lightGreen")!
+        
         indicator.isHidden = true
+    }
+    
+    @objc func didTapButton(){
+        button.startAnimation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            let email = self.emailTextField.text
+            let password = self.passwordTextField.text
+//                indicator.startAnimating()
+//                indicator.isHidden = false
+            if email != "" && password != "" {
+                Auth.auth().signIn(withEmail: email!, password: password!) { [weak self](result, error) in
+                    self?.button.stopAnimation(animationStyle: .expand, revertAfterDelay: 0.8) {
+//                        self?.indicator.stopAnimating()
+//                        self?.indicator.isHidden = true
+                        if error == nil {
+                            if Auth.auth().currentUser!.isEmailVerified {
+                                self?.goToMain()
+                            } else {
+                                self?.showMessage(title: "Warning", message: "Your email is not verified")
+                            }
+                        } else {
+                            print(error)
+                            self?.showMessage(title: "Error", message: "Some problem occured")
+                        }
+                    }
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,31 +77,11 @@ class LogInViewController: UIViewController {
         } 
     }
     
-    @IBAction func logInPressed(_ sender: Any) {
-        let email = emailTextField.text
-        let password = passwordTextField.text
-        indicator.startAnimating()
-        indicator.isHidden = false
-        if email != "" && password != "" {
-            Auth.auth().signIn(withEmail: email!, password: password!) { [weak self](result, error) in
-                self?.indicator.stopAnimating()
-                self?.indicator.isHidden = true
-                if error == nil {
-                    if Auth.auth().currentUser!.isEmailVerified {
-                        self?.goToMain()
-                    } else {
-                        self?.showMessage(title: "Warning", message: "Your email is not verified")
-                    }
-                } else {
-                    self?.showMessage(title: "Error", message: "Some problem occured")
-                }
-            }
-        }
-    }
     
     func goToMain() {
         let mainPage = TabbarVC()
         mainPage.modalPresentationStyle = .fullScreen
+        mainPage.modalTransitionStyle = .crossDissolve
         present(mainPage, animated: true)
     }
     
@@ -89,7 +110,7 @@ class LogInViewController: UIViewController {
     
     func updateLanguage(_ language: String) {
         createButton.setTitle("Don't have an account? Create one!".addLocalizableString(str: language), for: .normal)
-        logInButton.setTitle("Log In".addLocalizableString(str: language), for: .normal)
+        button.setTitle("Log In".addLocalizableString(str: language), for: .normal)
         label1.text = "Log In".addLocalizableString(str: language)
         emailTextField.placeholder = "Email".addLocalizableString(str: language)
         passwordTextField.placeholder = "Password".addLocalizableString(str: language)
