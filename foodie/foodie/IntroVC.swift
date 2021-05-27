@@ -63,6 +63,7 @@ class IntroVC: UIViewController, UIScrollViewDelegate {
             txt1.textAlignment = .center
             txt1.font = UIFont.boldSystemFont(ofSize: 20.0)
             txt1.text = titles[index]
+            txt1.numberOfLines = 5
 
             let txt2 = UILabel.init(frame: CGRect(x:32,y:txt1.frame.maxY+10,width:scrollWidth-64,height:50))
             txt2.textAlignment = .center
