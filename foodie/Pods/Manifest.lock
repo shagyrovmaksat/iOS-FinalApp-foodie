@@ -82,6 +82,7 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
   - RAMAnimatedTabBarController (5.2.0)
+  - TransitionButton (0.5.3)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -90,6 +91,7 @@ DEPENDENCIES:
   - FirebaseDatabase
   - LanguageManager-iOS
   - RAMAnimatedTabBarController
+  - TransitionButton
 
 SPEC REPOS:
   trunk:
@@ -110,6 +112,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RAMAnimatedTabBarController
+    - TransitionButton
 
 SPEC CHECKSUMS:
   Firebase: fffddd0bab8677d07376538365faa93ff3889b39
@@ -129,7 +132,8 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   RAMAnimatedTabBarController: 6863a386e7ae2ab227cd60aa73ab8ff56cdacfdd
+  TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
 
-PODFILE CHECKSUM: 84ac47f361c3405cdc58b65bda28c431a755aa82
+PODFILE CHECKSUM: ad20bb1e6712cb7114646dd7ddc4569fd25e64d7
 
 COCOAPODS: 1.10.1
