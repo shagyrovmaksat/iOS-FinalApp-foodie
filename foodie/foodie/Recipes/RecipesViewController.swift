@@ -36,6 +36,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .lightContent
         // TODO: check if is fav and change image
         // TODO: from recipe to detail
         searchBar.delegate = self
@@ -67,7 +68,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             searchingRecipes.removeAll()
             for recipe in showRecipes {
-                print(searchText.lowercased())
+//                print(searchText.lowercased())
                 if recipe.ingredients!.lowercased().range(of: searchText.lowercased()) != nil{
                     searchingRecipes.append(recipe)
                 }
