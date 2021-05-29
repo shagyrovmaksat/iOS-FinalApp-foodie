@@ -11,8 +11,14 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 import LanguageManager_iOS
+import DropDown
 
 class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
+    @IBOutlet weak var viewDropDown: UIView!
+    @IBOutlet weak var sortLbl: UILabel!
+    @IBOutlet weak var sortDropDownBtn: UIButton!
+    
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -34,9 +40,12 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     var searchingRecipes: [Recipe] = []
     var isSearching = false
     
+    let dropDown = DropDown()
+    let sortingArr = ["Time it takes", "Easy recipes", "Medium recipes", "Hard recipes"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.statusBarStyle = .lightContent
+        setUpDropDown()
         // TODO: check if is fav and change image
         // TODO: from recipe to detail
         searchBar.delegate = self
@@ -64,6 +73,61 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
+    
+    func setUpDropDown(){
+        dropDown.anchorView = viewDropDown
+        dropDown.dataSource = sortingArr
+        dropDown.dismissMode = .automatic
+        dropDown.textColor = UIColor(named: "darkGreen") ?? .black
+        dropDown.cornerRadius = 20
+    
+        // Top of drop down will be below the anchorView
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        // When drop down is displayed with `Direction.top`, it will be above the anchorView
+        dropDown.topOffset = CGPoint(x: 0, y:-(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.direction = .any
+        sortLbl.text = "Sort by:"
+        // Action triggered on selection
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            sortLbl.text = sortingArr[index]
+            updateRecipes(sortType: item)
+            print("Selected item: \(item) at index: \(index)")
+        }
+    }
+    
+    func updateRecipes(sortType: String){
+        showRecipes.removeAll()
+        searchingRecipes.removeAll()
+        for recipe in recipes {
+            if(recipe.type == state) {
+                if(sortType == "Easy recipes"){
+                    if(recipe.difficulty == "easy"){
+                        showRecipes.append(recipe)
+                    }
+                } else if(sortType == "Medium recipes"){
+                    if(recipe.difficulty == "medium"){
+                        showRecipes.append(recipe)
+                    }
+                } else if(sortType == "Hard recipes"){
+                    if(recipe.difficulty == "hard"){
+                        showRecipes.append(recipe)
+                    }
+                } else if(sortType == "Time it takes"){
+                    showRecipes.append(recipe)
+                    
+    //                showRecipes.sort(by: recipe.time) // TODO
+                    showRecipes.sort(by: {Int($0.time!)! < Int($1.time!)!})
+                }
+            }
+        }
+        getFavourites()
+        myTableView.reloadData()
+    }
+    
+    @IBAction func dropDownClicked(_ sender: UIButton) {
+        dropDown.show()
+    }
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             searchingRecipes.removeAll()
@@ -160,6 +224,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func prepareRecipes() {
+        sortLbl.text = "Sort by:"
         showRecipes.removeAll()
         searchingRecipes.removeAll()
         for recipe in recipes {
@@ -240,3 +305,4 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 }
+
