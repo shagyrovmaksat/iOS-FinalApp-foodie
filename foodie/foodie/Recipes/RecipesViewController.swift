@@ -46,6 +46,8 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDropDown()
+        searchBar.layer.borderWidth = 2
+        searchBar.layer.borderColor = UIColor.white.cgColor
         // TODO: check if is fav and change image
         // TODO: from recipe to detail
         searchBar.delegate = self
@@ -99,7 +101,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         showRecipes.removeAll()
         searchingRecipes.removeAll()
         for recipe in recipes {
-            if(recipe.type == state) {
+            if(state == "all" || recipe.type == state) {
                 if(sortType == "Easy recipes"){
                     if(recipe.difficulty == "easy"){
                         showRecipes.append(recipe)
@@ -204,6 +206,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         case 0: state = "breakfast";
         case 1: state = "lunch";
         case 2: state = "dinner";
+        case 3: state = "all";
         default: break;
         }
         prepareRecipes()
@@ -227,10 +230,14 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         sortLbl.text = "Sort by:"
         showRecipes.removeAll()
         searchingRecipes.removeAll()
-        for recipe in recipes {
-            if(recipe.type == state) {
-                showRecipes.append(recipe)
+        if(state != "all") {
+            for recipe in recipes {
+                if(recipe.type == state) {
+                    showRecipes.append(recipe)
+                }
             }
+        } else {
+            showRecipes = recipes
         }
         getFavourites()
         myTableView.reloadData()
