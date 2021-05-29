@@ -59,10 +59,10 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myFavCell") as? RecipesCustomCell
-        
+        let language = LanguageManager.shared.currentLanguage.rawValue
         cell?.name.text = recipes[indexPath.row].name
-        cell?.time.text = "Time it takes: " + recipes[indexPath.row].time!
-        cell?.difficulty.text = "Level of difficulty: " + recipes[indexPath.row].difficulty!
+        cell?.time.text = "Time it takes".addLocalizableString(str: language) + ": " + recipes[indexPath.row].time!
+        cell?.difficulty.text = "Level of difficulty".addLocalizableString(str: language) + ": " + recipes[indexPath.row].difficulty!.addLocalizableString(str: language).addLocalizableString(str: language)
         cell?.recipeImage.image = recipes[indexPath.row].image
         
         

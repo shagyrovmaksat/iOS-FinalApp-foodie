@@ -101,6 +101,7 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     func updateLanguage(_ language: String) {
         logOutButton.setTitle("Log Out".addLocalizableString(str: language), for: .normal)
         myRecipesLabel.text = "My recipes".addLocalizableString(str: language)
+        myTableView.reloadData()
     }
     
     @IBAction func photoPicker(_ sender: UIButton) {
@@ -119,9 +120,10 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? ProfileRecipeCell
 //        cell?.recipeImage.image = myRecipes[indexPath.row].image
 // //        print(cell?.imageView?.image?.size.height)
+        let language = LanguageManager.shared.currentLanguage.rawValue
         cell?.recipeName.text = myRecipes[indexPath.row].value(forKey: "name") as? String
-        cell?.recipeTime.text = "Time it takes: " + ((myRecipes[indexPath.row].value(forKey: "time") as? String)!)
-        cell?.recipeLevel.text = "Level of difficulty: " + ((myRecipes[indexPath.row].value(forKey: "difficulty") as? String)!)
+        cell?.recipeTime.text = "Time it takes".addLocalizableString(str: language) + ": " + ((myRecipes[indexPath.row].value(forKey: "time") as? String)!)
+        cell?.recipeLevel.text = "Level of difficulty".addLocalizableString(str: language) + ": " + ((myRecipes[indexPath.row].value(forKey: "difficulty") as? String)!).addLocalizableString(str: language)
         cell?.recipeImage.image = UIImage(data: (myRecipes[indexPath.row].value(forKey: "image") as? Data)!)
         
         cell?.contentView.layer.borderWidth = 2.0

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     var delegate: Addable?
@@ -16,14 +17,19 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var timeTextInput: UITextField!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var methodsTextView: UITextView!
+    @IBOutlet weak var levelOfDifficultyLabel: UILabel!
     
     var difficulty = "easy"
     var pickerData = ["easy", "medium", "hard"]
+    var pickerData2 = ["easy", "medium", "hard"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Connect data:
         self.levelPicker.delegate = self
         self.levelPicker.dataSource = self
+        let language = LanguageManager.shared.currentLanguage.rawValue
+        levelOfDifficultyLabel.text = "Level of difficulty".addLocalizableString(str: language)
+        pickerData = ["easy".addLocalizableString(str: language), "medium".addLocalizableString(str: language), "hard".addLocalizableString(str: language)]
     }
     override func didReceiveMemoryWarning() {
        super.didReceiveMemoryWarning()
@@ -43,7 +49,7 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        difficulty = pickerData[row]
+        difficulty = pickerData2[row]
     }
     
     @IBAction func chooseImage(_ sender: UIButton) {

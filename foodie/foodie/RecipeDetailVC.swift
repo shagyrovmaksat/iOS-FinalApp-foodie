@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class RecipeDetailVC: UIViewController {
     
@@ -32,8 +33,9 @@ class RecipeDetailVC: UIViewController {
         viewWithCorner2.myCorner()
         recipeImage.image = image
         name.text = nameText
-        time.text = "Time it takes: " + timeText!
-        difficulty.text = "Level of difficulty: " + difficultyText!
+        let language = LanguageManager.shared.currentLanguage.rawValue
+        time.text = "Time it takes".addLocalizableString(str: language) + ": " + timeText!
+        difficulty.text = "Level of difficulty".addLocalizableString(str: language) + ": " + difficultyText!.addLocalizableString(str: language)
         methodsTV.text = methodsText
         ingredientsTV.text = ingredientsText
         ingredientsTV.isEditable = false
