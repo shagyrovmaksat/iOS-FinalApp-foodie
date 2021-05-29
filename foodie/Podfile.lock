@@ -1,4 +1,5 @@
 PODS:
+  - DropDown (2.3.13)
   - Firebase/Analytics (7.10.0):
     - Firebase/Core
   - Firebase/Core (7.10.0):
@@ -85,6 +86,7 @@ PODS:
   - TransitionButton (0.5.3)
 
 DEPENDENCIES:
+  - DropDown
   - Firebase/Analytics
   - Firebase/Storage
   - FirebaseAuth
@@ -95,6 +97,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - DropDown
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -115,6 +118,7 @@ SPEC REPOS:
     - TransitionButton
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Firebase: fffddd0bab8677d07376538365faa93ff3889b39
   FirebaseAnalytics: 4641d7ae4220174f6ca5626163ffc5de2e90391e
   FirebaseAuth: 675f2c4eb4426e7c58a78a89965a6530e7863535
@@ -134,6 +138,6 @@ SPEC CHECKSUMS:
   RAMAnimatedTabBarController: 6863a386e7ae2ab227cd60aa73ab8ff56cdacfdd
   TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
 
-PODFILE CHECKSUM: ad20bb1e6712cb7114646dd7ddc4569fd25e64d7
+PODFILE CHECKSUM: 09940a32e7141809a962dce54dc8c11e95153884
 
 COCOAPODS: 1.10.1

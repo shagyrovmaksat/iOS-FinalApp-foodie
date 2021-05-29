@@ -35,6 +35,4 @@ class TabbarVC: RAMAnimatedTabBarController  {
         
         setViewControllers([userVC, recipesVC, favVC], animated: false)
     }
-
-
 }

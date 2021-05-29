@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import CoreData
 import LanguageManager_iOS
+import DropDown
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        DropDown.startListeningToKeyboard()
     }
 
     // MARK: UISceneSession Lifecycle
