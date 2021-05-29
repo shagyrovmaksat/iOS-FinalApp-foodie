@@ -59,13 +59,13 @@ class IntroVC: UIViewController, UIScrollViewDelegate {
             imageView.contentMode = .scaleAspectFit
             imageView.center = CGPoint(x:scrollWidth/2,y: scrollHeight/2 - 50)
           
-            let txt1 = UILabel.init(frame: CGRect(x:32,y:imageView.frame.maxY+30,width:scrollWidth-64,height:30))
+            let txt1 = UILabel.init(frame: CGRect(x:32,y:imageView.frame.maxY+30,width:scrollWidth-64,height:60))
             txt1.textAlignment = .center
             txt1.font = UIFont.boldSystemFont(ofSize: 20.0)
             txt1.text = titles[index]
             txt1.numberOfLines = 5
 
-            let txt2 = UILabel.init(frame: CGRect(x:32,y:txt1.frame.maxY+10,width:scrollWidth-64,height:50))
+            let txt2 = UILabel.init(frame: CGRect(x:32,y:txt1.frame.maxY+10,width:scrollWidth-64,height:100))
             txt2.textAlignment = .center
             txt2.numberOfLines = 7
             txt2.font = UIFont.systemFont(ofSize: 18.0)
