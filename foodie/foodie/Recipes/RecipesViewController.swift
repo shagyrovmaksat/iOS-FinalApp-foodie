@@ -245,11 +245,12 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? RecipesCustomCell
+        let language = LanguageManager.shared.currentLanguage.rawValue
         
         if isSearching{
             cell?.name.text = searchingRecipes[indexPath.row].name
-            cell?.time.text = "Time it takes: " + searchingRecipes[indexPath.row].time!
-            cell?.difficulty.text = "Level of difficulty: " + searchingRecipes[indexPath.row].difficulty!
+            cell?.time.text = "Time it takes".addLocalizableString(str: language) + ": " + searchingRecipes[indexPath.row].time!
+            cell?.difficulty.text = "Level of difficulty".addLocalizableString(str: language) + ": " + searchingRecipes[indexPath.row].difficulty!.addLocalizableString(str: language)
             cell?.recipeImage.image = searchingRecipes[indexPath.row].image
             
             var isFav = false
@@ -264,8 +265,8 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         else{
             cell?.name.text = showRecipes[indexPath.row].name
-            cell?.time.text = "Time it takes: " + showRecipes[indexPath.row].time!
-            cell?.difficulty.text = "Level of difficulty: " + showRecipes[indexPath.row].difficulty!
+            cell?.time.text = "Time it takes".addLocalizableString(str: language) + ": " + showRecipes[indexPath.row].time!
+            cell?.difficulty.text = "Level of difficulty".addLocalizableString(str: language) + ": " + showRecipes[indexPath.row].difficulty!.addLocalizableString(str: language)
             cell?.recipeImage.image = showRecipes[indexPath.row].image
             
             var isFav = false

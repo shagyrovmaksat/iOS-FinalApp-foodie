@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class DetailRecipeViewController: UIViewController, Editable {
     var name: String?
@@ -29,8 +30,9 @@ class DetailRecipeViewController: UIViewController, Editable {
         super.viewDidLoad()
         imageView.image = image
         recipeName.text = name
-        timeLabel.text = "Time it takes: " + time!
-        difficultyLabel.text = "Level of difficulty: " + difficulty!
+        let language = LanguageManager.shared.currentLanguage.rawValue
+        timeLabel.text = "Time it takes".addLocalizableString(str: language) + ": " + time!
+        difficultyLabel.text = "Level of difficulty".addLocalizableString(str: language) + ": " + difficulty!.addLocalizableString(str: language)
         ingredientsTextView.text = ingredients
         methodsTextView.text = methods
         ingredientsTextView.isEditable = false
@@ -60,8 +62,8 @@ class DetailRecipeViewController: UIViewController, Editable {
     func editRecipe(_ image: UIImage, _ oldName: String, _ name: String, _ time: String, _ difficulty: String, _ ingredients: String, _ methods: String) {
         self.name = oldName
         recipeName.text = name
-        timeLabel.text = "Time it takes: " + time
-        difficultyLabel.text = "Level of difficulty: " + difficulty
+        timeLabel.text = "Time it takes".addLocalizableString(str: LanguageManager.shared.currentLanguage.rawValue) + ": " + time
+        difficultyLabel.text = "Level of difficulty".addLocalizableString(str: LanguageManager.shared.currentLanguage.rawValue) + ": " + difficulty
         ingredientsTextView.text = ingredients
         methodsTextView.text = methods
         delegate?.editRecipe(imageView.image!, oldName, name, time, difficulty, ingredients, methods)

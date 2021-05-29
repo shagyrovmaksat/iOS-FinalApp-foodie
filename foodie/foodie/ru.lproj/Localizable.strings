@@ -13,7 +13,7 @@
 "Back" = "Назад";
 "Settings" = "Настройки";
 "Hi! Here you can edit your profile" = "Хей! Здесь ты можешь изменить свой профиль";
-"Enter new data:" = "Введите новые данные:";
+"Enter new data" = "Введите новые данные";
 "Enter new name" = "Введите новое имя";
 "Enter new surname" = "Введите новую фамилию";
 "Save" = "Сохранить";
@@ -21,7 +21,7 @@
 "Name" = "Имя";
 "Recipe name" = "Название";
 "Time it takes" = "Время приготовления";
-"Level of difficulty:" = "Уровень сложности:";
+"Level of difficulty" = "Уровень сложности";
 "Ingredients" = "Ингридиенты";
 "Methods" = "Способ приготовления";
 "easy" = "легкий";
