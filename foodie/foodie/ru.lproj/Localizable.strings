@@ -38,3 +38,8 @@
 "Choose your language" = "Выберите свой язык";
 "Hey! What's in your fridge?" = "Привет! Что у тебя в холодильнике?";
 "Type the ingredients and we'll show you recipes with them." = "Введите ингредиенты, и мы покажем вам рецепты с ними.";
+"Easy recipes" = "Только легкие";
+"Medium recipes" = "Только средние";
+"Hard recipes" = "Только сложные";
+"Time it takes" = "По времени";
+"Sort by:" = "Сортировать:";

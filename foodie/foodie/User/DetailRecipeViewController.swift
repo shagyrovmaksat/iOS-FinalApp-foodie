@@ -25,9 +25,13 @@ class DetailRecipeViewController: UIViewController, Editable {
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var methodsTextView: UITextView!
     @IBOutlet weak var recipeName: UILabel!
+    @IBOutlet weak var corner1: UIView!
+    @IBOutlet weak var corner2: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        corner1.myCorner()
+        corner2.myCorner()
         imageView.image = image
         recipeName.text = name
         let language = LanguageManager.shared.currentLanguage.rawValue

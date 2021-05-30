@@ -18,12 +18,16 @@ class AddRecipeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var methodsTextView: UITextView!
     @IBOutlet weak var levelOfDifficultyLabel: UILabel!
+    @IBOutlet weak var corner1: UIView!
+    @IBOutlet weak var corner2: UIView!
     
     var difficulty = "easy"
     var pickerData = ["easy", "medium", "hard"]
     var pickerData2 = ["easy", "medium", "hard"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        corner1.myCorner()
+        corner2.myCorner()
         // Connect data:
         self.levelPicker.delegate = self
         self.levelPicker.dataSource = self
