@@ -22,8 +22,6 @@ class UserInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
-    
-    
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var myRecipesLabel: UILabel!
     

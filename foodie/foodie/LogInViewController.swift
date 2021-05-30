@@ -47,13 +47,9 @@ class LogInViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             let email = self.emailTextField.text
             let password = self.passwordTextField.text
-//                indicator.startAnimating()
-//                indicator.isHidden = false
             if email != "" && password != "" {
                 Auth.auth().signIn(withEmail: email!, password: password!) { [weak self](result, error) in
                     self?.button.stopAnimation(animationStyle: .expand, revertAfterDelay: 0.8) {
-//                        self?.indicator.stopAnimating()
-//                        self?.indicator.isHidden = true
                         if error == nil {
                             if Auth.auth().currentUser!.isEmailVerified {
                                 self?.goToMain()
@@ -105,7 +101,7 @@ class LogInViewController: UIViewController {
     
     @IBAction func changeToKaz(_ sender: Any) {
         LanguageManager.shared.setLanguage(language: .ko)
-        updateLanguage("ko")
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
     }
     
     func updateLanguage(_ language: String) {
@@ -115,9 +111,4 @@ class LogInViewController: UIViewController {
         emailTextField.placeholder = "Email".addLocalizableString(str: language)
         passwordTextField.placeholder = "Password".addLocalizableString(str: language)
     }
-}
-
-extension UIStoryboard {
-    static let onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
-    static let main = UIStoryboard(name: "Main", bundle: nil)
 }

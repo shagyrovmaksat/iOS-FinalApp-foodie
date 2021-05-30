@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registrationButton.layer.cornerRadius = 5
+        registrationButton.layer.cornerRadius = 20
         indicator.isHidden = true
     }
     
@@ -97,7 +97,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func changeToKaz(_ sender: Any) {
         LanguageManager.shared.setLanguage(language: .ko)
-        updateLanguage("ko")
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
     }
     
     func updateLanguage(_ language: String) {

@@ -12,10 +12,8 @@ class TabbarVC: RAMAnimatedTabBarController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tabBar.barTintColor = UIColor.init(named: "darkGreen")
         tabBar.tintColor = UIColor.init(named: "lightGreen")
-        
         configure()
     }
     

@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController {
     }
     @IBAction func changeToKaz(_ sender: Any) {
         LanguageManager.shared.setLanguage(language: .ko)
-        updateLanguage("ko")
+        updateLanguage(LanguageManager.shared.currentLanguage.rawValue)
     }
     
     func updateLanguage(_ language: String) {
@@ -47,7 +47,6 @@ class SettingsViewController: UIViewController {
 }
 
 extension String {
-    
     func addLocalizableString(str: String) -> String {
         let path = Bundle.main.path(forResource: str, ofType: "lproj")
         let bundle = Bundle(path: path!)

@@ -33,11 +33,13 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var recipes : [Recipe] = []
     var showRecipes : [Recipe] = []
+    var searchingRecipes: [Recipe] = []
+    
     var favRecipes : [Recipe] = []
     var state = "breakfast"
     var curIdx = 0
     var currentUser: User?
-    var searchingRecipes: [Recipe] = []
+   
     var isSearching = false
     
     let dropDown = DropDown()
@@ -47,17 +49,21 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDropDown()
+        
         searchBar.layer.borderWidth = 2
         searchBar.layer.borderColor = UIColor.white.cgColor
-        // TODO: check if is fav and change image
-        // TODO: from recipe to detail
         searchBar.delegate = self
+        
         currentUser = Auth.auth().currentUser
-        myTableView.separatorStyle = .none
-        myTableView.rowHeight = 350
-        let font = UIFont.systemFont(ofSize: 20)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "darkGreen")!], for: UIControl.State.normal)
+        
+        myTableView.ourStyle()
+        
+        setUpSegmentController()
+        
+        loadRecipesFromFireBase()
+    }
+    
+    func loadRecipesFromFireBase() {
         ref.child("recipes").observe(.value) { [weak self](snapshot) in
             self?.recipes.removeAll()
             for child in snapshot.children {
@@ -69,12 +75,16 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
             self?.recipes.reverse()
             self?.loadImages()
             self?.prepareRecipes()
-            // FIXME: images loading
-            // TODO: indicator for images
             DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                 self!.myTableView.reloadData()
             }
         }
+    }
+    
+    func setUpSegmentController() {
+        let font = UIFont.systemFont(ofSize: 20)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "darkGreen")!], for: UIControl.State.normal)
     }
     
     func setUpDropDown(){
@@ -119,8 +129,6 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                 } else if(sortType == 0){
                     showRecipes.append(recipe)
-                    
-    //                showRecipes.sort(by: recipe.time) // TODO
                     showRecipes.sort(by: {Int($0.time!)! < Int($1.time!)!})
                 }
             }
@@ -133,18 +141,17 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         dropDown.show()
     }
     
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             searchingRecipes.removeAll()
-            for recipe in showRecipes {
-//                print(searchText.lowercased())
-                if recipe.ingredients!.lowercased().range(of: searchText.lowercased()) != nil{
-                    searchingRecipes.append(recipe)
-                }
-            }
             isSearching = true
             if searchText == "" {
                 isSearching = false;
+            } else {
+                for recipe in showRecipes {
+                    if recipe.ingredients!.lowercased().range(of: searchText.lowercased()) != nil{
+                        searchingRecipes.append(recipe)
+                    }
+                }
             }
             myTableView.reloadData()
         }
@@ -178,7 +185,6 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    
     @IBAction func addToFavs(_ sender: UIButton) {
         let buttonPos = sender.convert(CGPoint.zero, to: self.myTableView)
         guard let cell = sender.superview?.superview as? RecipesCustomCell else {
@@ -198,8 +204,9 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print("key = \(uid)")
             }
         })
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-            if isFavourite == false{
+            if isFavourite == false {
                 cell.icon.setImage(UIImage.init(named: "isFav"), for: .normal)
                 Database.database().reference().child("users").child(self.currentUser!.uid).child("favoriteRecipes").childByAutoId().setValue(self.showRecipes[indexPath!.row].dict)
                 print("added")
@@ -320,3 +327,9 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 }
 
+extension UITableView {
+    func ourStyle() {
+        self.separatorStyle = .none
+        self.rowHeight = 350
+    }
+}
