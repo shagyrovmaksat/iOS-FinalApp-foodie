@@ -18,6 +18,8 @@ class DetailRecipeViewController: UIViewController, Editable {
     var ind: Int?
     var delegate: Editable?
     var delegateForChange: Changeable?
+    @IBOutlet weak var corner1: UIView!
+    @IBOutlet weak var corner2: UIView!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -30,6 +32,8 @@ class DetailRecipeViewController: UIViewController, Editable {
         super.viewDidLoad()
         imageView.image = image
         recipeName.text = name
+        corner1.myCorner()
+        corner2.myCorner()
         let language = LanguageManager.shared.currentLanguage.rawValue
         timeLabel.text = "Time it takes".addLocalizableString(str: language) + ": " + time!
         difficultyLabel.text = "Level of difficulty".addLocalizableString(str: language) + ": " + difficulty!.addLocalizableString(str: language)

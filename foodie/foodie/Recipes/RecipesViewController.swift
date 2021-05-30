@@ -41,7 +41,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     var isSearching = false
     
     let dropDown = DropDown()
-    let sortingArr = ["Time it takes", "Easy recipes", "Medium recipes", "Hard recipes"]
+    var sortingArr = ["Time it takes", "Easy recipes", "Medium recipes", "Hard recipes"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +78,8 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func setUpDropDown(){
         dropDown.anchorView = viewDropDown
+        let language = LanguageManager.shared.currentLanguage.rawValue
+        sortingArr = ["Time it takes".addLocalizableString(str: language), "Easy recipes".addLocalizableString(str: language), "Medium recipes".addLocalizableString(str: language), "Hard recipes".addLocalizableString(str: language)]
         dropDown.dataSource = sortingArr
         dropDown.dismissMode = .automatic
         dropDown.textColor = UIColor(named: "darkGreen") ?? .black
@@ -88,36 +90,34 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         // When drop down is displayed with `Direction.top`, it will be above the anchorView
         dropDown.topOffset = CGPoint(x: 0, y:-(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.direction = .any
-        sortLbl.text = "Sort by:"
+        sortLbl.text = "Sort by:".addLocalizableString(str: LanguageManager.shared.currentLanguage.rawValue)
         // Action triggered on selection
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            sortLbl.text = sortingArr[index]
-            updateRecipes(sortType: item)
+            sortLbl.text = item
+            updateRecipes(sortType: index)
             print("Selected item: \(item) at index: \(index)")
         }
     }
     
-    func updateRecipes(sortType: String){
+    func updateRecipes(sortType: Int){
         showRecipes.removeAll()
         searchingRecipes.removeAll()
         for recipe in recipes {
             if(state == "all" || recipe.type == state) {
-                if(sortType == "Easy recipes"){
+                if(sortType == 1){
                     if(recipe.difficulty == "easy"){
                         showRecipes.append(recipe)
                     }
-                } else if(sortType == "Medium recipes"){
+                } else if(sortType == 2){
                     if(recipe.difficulty == "medium"){
                         showRecipes.append(recipe)
                     }
-                } else if(sortType == "Hard recipes"){
+                } else if(sortType == 3){
                     if(recipe.difficulty == "hard"){
                         showRecipes.append(recipe)
                     }
-                } else if(sortType == "Time it takes"){
+                } else if(sortType == 0){
                     showRecipes.append(recipe)
-                    
-    //                showRecipes.sort(by: recipe.time) // TODO
                     showRecipes.sort(by: {Int($0.time!)! < Int($1.time!)!})
                 }
             }
@@ -158,6 +158,9 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         recipesLabel.text = "Recipes".addLocalizableString(str: language)
         label1.text = "Hey! What's in your fridge?".addLocalizableString(str: language)
         label2.text = "Type the ingredients and we'll show you recipes with them.".addLocalizableString(str: language)
+        sortingArr = ["Time it takes".addLocalizableString(str: language), "Easy recipes".addLocalizableString(str: language), "Medium recipes".addLocalizableString(str: language), "Hard recipes".addLocalizableString(str: language)]
+        setUpDropDown()
+        sortLbl.text = "Sort by:".addLocalizableString(str: LanguageManager.shared.currentLanguage.rawValue)
     }
     
     func getFavourites(){
@@ -227,7 +230,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func prepareRecipes() {
-        sortLbl.text = "Sort by:"
+        sortLbl.text = "Sort by:".addLocalizableString(str: LanguageManager.shared.currentLanguage.rawValue)
         showRecipes.removeAll()
         searchingRecipes.removeAll()
         if(state != "all") {
