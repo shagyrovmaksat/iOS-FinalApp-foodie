@@ -16,8 +16,6 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-//    @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var createButton: UIButton!
@@ -38,8 +36,6 @@ class LogInViewController: UIViewController {
         view.addSubview(button)
         
         button.spinnerColor = UIColor(named: "lightGreen")!
-        
-        indicator.isHidden = true
     }
     
     @objc func didTapButton(){

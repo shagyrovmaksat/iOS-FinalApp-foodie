@@ -165,6 +165,7 @@ class RecipesViewController: UIViewController, UITableViewDelegate, UITableViewD
         segmentedControl.setTitle("Breakfast".addLocalizableString(str: language), forSegmentAt: 0)
         segmentedControl.setTitle("Lunch".addLocalizableString(str: language), forSegmentAt: 1)
         segmentedControl.setTitle("Dinner".addLocalizableString(str: language), forSegmentAt: 2)
+        segmentedControl.setTitle("All".addLocalizableString(str: language), forSegmentAt: 3)
         recipesLabel.text = "Recipes".addLocalizableString(str: language)
         label1.text = "Hey! What's in your fridge?".addLocalizableString(str: language)
         label2.text = "Type the ingredients and we'll show you recipes with them.".addLocalizableString(str: language)
